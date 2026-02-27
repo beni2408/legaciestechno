@@ -1,4 +1,11 @@
 import Image from "next/image";
+import { Roboto_Mono } from "next/font/google";
+import Link from "next/link";
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 export default function Navbar() {
   return (
@@ -19,11 +26,50 @@ export default function Navbar() {
 
         <div className="flex items-center gap-5">
           <ul className="hidden md:flex gap-10 text-sm tracking-wider">
-            <li className="hover:text-black cursor-pointer">SERVICES</li>
-            <li className="hover:text-black cursor-pointer">WORK</li>
-            <li className="hover:text-black cursor-pointer">STUDIO</li>
-            <li className="hover:text-black cursor-pointer">BLOG</li>
-            <li className="hover:text-black cursor-pointer">LYNT-X LABS</li>
+            <li className={`font-semibold ${robotoMono.className}`}>
+              <Link
+                href="/services"
+                className="hover:text-black cursor-pointer"
+              >
+                SERVICES
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/work"
+                className={`hover:text-black cursor-pointer font-semibold ${robotoMono.className}`}
+              >
+                WORK
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/studio"
+                className={`hover:text-black cursor-pointer font-semibold ${robotoMono.className}`}
+              >
+                STUDIO
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/blog"
+                className={`hover:text-black cursor-pointer font-semibold ${robotoMono.className}`}
+              >
+                BLOG
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/lynt-x-labs"
+                className={`hover:text-black cursor-pointer font-semibold ${robotoMono.className}`}
+              >
+                LYNT-X LABS
+              </Link>
+            </li>
           </ul>
 
           <button className="bg-[#191919] text-[#fdfbf5] px-5 py-2 rounded-md text-sm font-medium hover:bg-gray-800 transition">

@@ -1,3 +1,10 @@
+import { Roboto_Mono } from "next/font/google";
+
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+
 export default function TrustedBrands() {
   return (
     <section className="bg-[#19191] text-white py-5">
@@ -8,7 +15,7 @@ export default function TrustedBrands() {
         <div className="flex items-center">
           {/* LABEL */}
           <div className="w-[160px]">
-            <p className="text-sm tracking-widest text-white/60">TRUSTED BY</p>
+            <p className="text-sm tracking-widest text-[#191919]">TRUSTED BY</p>
           </div>
 
           {/* LOGOS */}

@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Syne } from "next/font/google";
+import Footer from "@/components/Footer";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
       <div className="border border-black/50 m-4 bg-[#fdfbf5] px-10 bg-[#fdfbf5] border-[1px]">
         <Navbar />
         <body className="font-satoshi antialiased">{children}</body>
+        <Footer />
       </div>
     </html>
   );

@@ -1,3 +1,5 @@
+"use client";
+
 import TrustedBrands from "@/components/trustedBrands";
 import { ServiceCard } from "@/components/serviceCard";
 import { ProjectCard, SmallProjectCard } from "@/components/ProjectCard";
@@ -6,6 +8,7 @@ import { EthosItem } from "@/components/EthosItem";
 import { LogoAnimater } from "@/components/logoanimater";
 import { NewsCard } from "@/components/newsCard";
 import { Roboto_Mono } from "next/font/google";
+import Link from "next/link";
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -140,9 +143,12 @@ export default function HomePage() {
                 the brands we’ve powered forward.
               </p>
 
-              <button className="mt-6 px-6 py-3 bg-[#191919] font-mono text-[#fdfbf5] text-sm tracking-wide rounded-md hover:bg-black/80 transition">
+              <Link
+                href="/work"
+                className={`${robotoMono.className} inline-block px-8 py-4 bg-[#191919] w-52 text-center text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition-all duration-300 relative z-10`}
+              >
                 SEE ALL WORK
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -224,9 +230,12 @@ export default function HomePage() {
                   helping you thrive in a fast-evolving digital landscape.
                 </p>
 
-                <button className="px-6 py-3 bg-black text-white text-sm tracking-widest rounded-md hover:bg-black/80 transition w-50">
+                <Link
+                  href="/services"
+                  className={`${robotoMono.className} inline-block px-8 py-4 bg-[#191919] w-52 text-center text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition-all duration-300 relative z-10`}
+                >
                   OUR SERVICES
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -329,9 +338,12 @@ export default function HomePage() {
                   solutions that create lasting impact.
                 </p>
 
-                <button className="px-8 py-4 bg-[#191919] w-50 text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition">
+                <Link
+                  href="/contact"
+                  className={`${robotoMono.className} inline-block px-8 py-4 bg-[#191919] w-52 text-center text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition-all duration-300 relative z-10`}
+                >
                   GET IN TOUCH
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -351,12 +363,13 @@ export default function HomePage() {
             >
               LATEST NEWS
             </h2>
-
-            <button
-              className={`  ${syne.className} px-5 py-2 border border-[#191919]/30 rounded-md text-md tracking-widest hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
-            >
-              SEE ALL
-            </button>
+            <Link href={"/blog"}>
+              <button
+                className={`  ${syne.className} px-5 py-2 border border-[#191919]/30 rounded-md text-md tracking-widest hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
+              >
+                SEE ALL
+              </button>
+            </Link>
           </div>
 
           {/* DIVIDER */}

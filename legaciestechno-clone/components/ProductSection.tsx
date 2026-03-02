@@ -20,6 +20,7 @@ interface ProductSectionProps {
   description: string;
   image: string;
   features: string[];
+  last_desc: string;
 }
 
 export default function ProductSection({
@@ -28,6 +29,7 @@ export default function ProductSection({
   description,
   image,
   features,
+  last_desc,
 }: ProductSectionProps) {
   return (
     <section className="bg-[#fdfbf5] text-[#191919]">
@@ -42,12 +44,14 @@ export default function ProductSection({
             </p>
 
             <h2
-              className={`${syne.className} text-5xl font-semibold leading-tight`}
+              className={`${syne.className} text-6xl font-semibold leading-tight uppercase`}
             >
               {title}
             </h2>
 
-            <p className="text-[#191919]/70 leading-relaxed">{description}</p>
+            <p className="text-[#191919]/70  text-xl leading-relaxed">
+              {description}
+            </p>
           </div>
         </div>
 
@@ -56,23 +60,25 @@ export default function ProductSection({
 
         {/* RIGHT SIDE */}
         <div className="w-[65%] space-y-10">
-          <div className="rounded-2xl overflow-hidden shadow-md">
+          <div className="rounded-2xl overflow-hidden shadow-md ">
             <img src={image} alt={title} className="w-full object-cover" />
           </div>
-
-          <ul className="space-y-4 text-[#191919]/80 leading-relaxed">
-            {features.map((feature, index) => (
-              <li key={index} className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 bg-[#191919] rounded-full"></span>
-                {feature}
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-col">
+            <ul className="space-y-4 text-[#191919]/80 leading-relaxed text-xl">
+              {features.map((feature, index) => (
+                <li key={index} className="flex gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 bg-[#191919] rounded-full text-xl"></span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="text-xl">{last_desc}</p>
         </div>
       </div>
 
       {/* CUSTOM DIVIDER FORMAT */}
-      <div className="w-full border border-black/50 mb-15 mt-20 border-[0.2px]"></div>
+      <div className="w-full border  border-black/50 mb-15 mt-20 border-[0.2px]"></div>
     </section>
   );
 }

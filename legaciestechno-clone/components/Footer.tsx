@@ -63,7 +63,10 @@ export default function Footer() {
               <FooterLink href="/contact" className={`${robotoMono.className}`}>
                 CONTACT
               </FooterLink>
-              <FooterLink href="/labs" className={`${robotoMono.className}`}>
+              <FooterLink
+                href="/lynt-x-labs"
+                className={`${robotoMono.className}`}
+              >
                 LYNT-X LABS
               </FooterLink>
             </div>

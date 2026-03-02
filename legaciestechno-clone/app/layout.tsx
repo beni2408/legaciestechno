@@ -39,12 +39,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-[#fdfbf5]">
-      <div className="bg-[#fdfbf5]"></div>
-      <div className="border border-black/50 m-4 bg-[#fdfbf5] px-10 bg-[#fdfbf5] border-[1px]">
-        <Navbar />
-        <body className="font-satoshi antialiased">{children}</body>
-        <Footer />
-      </div>
+      <body className="font-satoshi antialiased">
+        <div className="border border-black/50 m-4 bg-[#fdfbf5] px-10 border-[1px]">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 import CaseStudyCard from "@/components/CaseStudyCard";
 import { LogoAnimater } from "@/components/logoanimater";
+import Link from "next/link";
 
 import { Syne } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
@@ -106,12 +107,12 @@ export default function WorkPage() {
                   is your partner in crafting intelligent, enterprise-grade
                   solutions that create lasting impact.
                 </p>
-
-                <button
-                  className={` ${robotoMono.className} px-8 py-4 bg-[#191919] w-50 text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition`}
+                <Link
+                  href="/contact"
+                  className={`${robotoMono.className} inline-block px-8 py-4 bg-[#191919] w-52 text-center text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition-all duration-300 relative z-10`}
                 >
                   GET IN TOUCH
-                </button>
+                </Link>
               </div>
             </div>
           </div>

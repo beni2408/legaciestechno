@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { Syne } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
 import TeamCard from "@/components/teamCard";
@@ -256,11 +256,13 @@ export default function studio() {
                   solutions that create lasting impact.
                 </p>
 
-                <button
-                  className={` ${robotoMono.className} px-8 py-4 bg-[#191919] w-50 text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition`}
-                >
-                  GET IN TOUCH
-                </button>
+                <Link href={"/contact"}>
+                  <button
+                    className={` ${robotoMono.className} px-8 py-4 bg-[#191919] w-50 text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition`}
+                  >
+                    GET IN TOUCH
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

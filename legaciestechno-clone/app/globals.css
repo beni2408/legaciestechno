@@ -132,3 +132,68 @@ body {
 @theme {
   --font-satoshi: "Satoshi", sans-serif;
 }
+
+/* CKEditor Content Styles */
+.ck-editor__editable {
+  min-height: 300px;
+  max-height: 500px;
+}
+
+/* Blog content styling */
+.max-w-4xl h1,
+.max-w-4xl h2,
+.max-w-4xl h3 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.max-w-4xl h1 {
+  font-size: 2rem;
+}
+
+.max-w-4xl h2 {
+  font-size: 1.5rem;
+}
+
+.max-w-4xl h3 {
+  font-size: 1.25rem;
+}
+
+.max-w-4xl p {
+  margin-bottom: 1rem;
+}
+
+.max-w-4xl ul,
+.max-w-4xl ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.max-w-4xl ul {
+  list-style-type: disc;
+}
+
+.max-w-4xl ol {
+  list-style-type: decimal;
+}
+
+.max-w-4xl li {
+  margin-bottom: 0.5rem;
+}
+
+.max-w-4xl blockquote {
+  border-left: 4px solid #191919;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.max-w-4xl a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.max-w-4xl a:hover {
+  color: #1d4ed8;
+}

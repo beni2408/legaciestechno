@@ -4,6 +4,7 @@ import { Syne } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
 import ProductSection from "@/components/ProductSection";
 import { LogoAnimater } from "@/components/logoanimater";
+import Link from "next/link";
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -250,17 +251,17 @@ export default function LyntXPage() {
           {/* LEFT SIDE */}
           <div className="space-y-10">
             <p
-              className={` ${robotoMono.className} text-sm tracking-widest text-[#191919]/60`}
+              className={` ${robotoMono.className} text-xl font-semibold tracking-widest text-[#191919]`}
             >
               CONTACT
             </p>
 
             <h1
-              className={`${syne.className} text-4xl sm:text-5xl  w-200 lg:text-7xl font-semibold leading-tight`}
+              className={`${syne.className} text-4xl sm:text-5xl  w-200 lg:text-8xl  uppercase font-semibold leading-tight`}
             >
-              LET’S ENGINEER THE <br />
-              FUTURE — <br />
-              TOGETHER
+              Innovate. <br />
+              Incubate. <br />
+              Launch.
             </h1>
 
             <LogoAnimater />
@@ -272,18 +273,20 @@ export default function LyntXPage() {
             <div className="hidden lg:block absolute  top-0 h-full w-px bg-[#191919]/20 border border-black/10 border-0.5" />
 
             <div className="space-y-16 flex flex-col justify-between h-full ml-10">
-              <p className="text-lg text-[#191919]/70 leading-relaxed">
-                Whether you’re scaling a digital product, modernizing
-                operations, or building from the ground up — Legacies Techno is
-                your partner in crafting intelligent, enterprise-grade solutions
-                that create lasting impact.
+              <p className="text-xl text-[#191919]/70 leading-relaxed">
+                With Lynt-X Labs fueling Legacies Techno’s innovation roadmap,
+                we’re committed to delivering the next wave of AI-powered,
+                compliance-ready, industry-specific platforms that empower
+                businesses to scale, differentiate, and lead in their markets.
               </p>
 
-              <button
-                className={` ${robotoMono.className} px-8 py-4 bg-[#191919] w-50 text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition`}
-              >
-                GET IN TOUCH
-              </button>
+              <Link href="/">
+                <button
+                  className={` ${robotoMono.className} px-8 py-4 bg-[#191919] w-50 text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition`}
+                >
+                  GET IN TOUCH
+                </button>
+              </Link>
             </div>
           </div>
         </div>

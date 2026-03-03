@@ -97,8 +97,8 @@ export default function Footer() {
             <p>© 2025 LEGACIES TECHNO. ALL RIGHTS RESERVED.</p>
 
             <div className="flex gap-6 mt-3 md:mt-0">
-              <FooterLink href="/cookies">COOKIE POLICY</FooterLink>
-              <FooterLink href="/privacy">PRIVACY POLICY</FooterLink>
+              <FooterLink href="/cookie-policy">COOKIE POLICY</FooterLink>
+              <FooterLink href="/privacy-policy">PRIVACY POLICY</FooterLink>
             </div>
           </div>
         </div>

@@ -20,17 +20,15 @@ export function ContactAd() {
           {/* LEFT SIDE */}
           <div className="space-y-10">
             <p
-              className={` ${robotoMono.className} text-sm tracking-widest font-bold text-[#191919]`}
+              className={` ${robotoMono.className} text-xl  tracking-widest font-bold text-[#191919]`}
             >
               CONTACT
             </p>
 
             <h1
-              className={`${syne.className} text-4xl sm:text-5xl  w-200 lg:text-7xl font-semibold leading-tight`}
+              className={`${syne.className} text-4xl sm:text-5xl  w-200 lg:text-7xl uppercase font-bold leading-tight`}
             >
-              LET’S ENGINEER THE <br />
-              FUTURE — <br />
-              TOGETHER
+              LET’S ENGINEER THE FUTURE — TOGETHER
             </h1>
 
             <LogoAnimater />
@@ -42,7 +40,7 @@ export function ContactAd() {
             <div className="hidden lg:block absolute  top-0 h-full w-px bg-[#191919]/20 border border-black/10 border-0.5" />
 
             <div className="space-y-16 flex flex-col justify-between h-full ml-10">
-              <p className="text-lg text-[#191919]/70 leading-relaxed">
+              <p className="text-2xl text-[#191919]/70 leading-relaxed">
                 Whether you’re scaling a digital product, modernizing
                 operations, or building from the ground up — Legacies Techno is
                 your partner in crafting intelligent, enterprise-grade solutions

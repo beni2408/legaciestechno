@@ -106,7 +106,11 @@ export default function SingleBlogPage() {
           <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           {blog.source && (
             <div className="mt-8 pt-6 border-t border-[#191919]/20">
-              <p className={`${robotoMono.className} text-[#191919]/50 uppercase text-sm mb-2`}>Source</p>
+              <p
+                className={`${robotoMono.className} text-[#191919]/50 uppercase text-sm mb-2`}
+              >
+                Source
+              </p>
               {blog.sourceUrl ? (
                 <a
                   href={blog.sourceUrl}

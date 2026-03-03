@@ -55,10 +55,31 @@ export default function CaseStudyCard({
         </div>
 
         {/* RIGHT SIDE */}
+        {/* RIGHT SIDE */}
+        {/* RIGHT SIDE */}
         <div className="w-[65%]">
-          <div className="rounded-2xl overflow-hidden shadow-lg hover:scale-[1.02] transition duration-500">
-            <img src={image} alt={title} className="w-full object-cover" />
-          </div>
+          <Link href={link}>
+            <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+              {/* IMAGE */}
+              <img
+                src={image}
+                alt={title}
+                className="w-full object-cover transition duration-500 group-hover:scale-[1.02] "
+              />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-[#191919]/0 group-hover: transition duration-500" />
+
+              {/* CENTER TEXT */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-100">
+                <div
+                  className={` ${robotoMono.className}  bg-[#191919] text-[#fdfbf5] px-4 py-2 rounded-xl text-xs tracking-widest font-medium shadow-md`}
+                >
+                  VIEW MORE
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>

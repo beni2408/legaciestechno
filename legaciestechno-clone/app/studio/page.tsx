@@ -71,12 +71,13 @@ export default function studio() {
                 AI-powered transformation.
               </h2>
             </div>
-            <button
-              className={`${robotoMono.className} mt-12 w-fit px-6 py-3 bg-[#191919] text-[#fdfbf5] text-sm uppercase tracking-widest rounded-md hover:scale-105 transition`}
-              href="/services"
-            >
-              Our Services
-            </button>
+            <Link href="/services">
+              <button
+                className={`${robotoMono.className} mt-12 w-fit px-6 py-3 bg-[#191919] text-[#fdfbf5] text-sm uppercase tracking-widest rounded-md hover:scale-105 transition`}
+              >
+                Our Services
+              </button>
+            </Link>
           </div>
 
           {/* VERTICAL DIVIDER */}

@@ -24,8 +24,8 @@ export default function Navbar() {
           </svg> */}
         </div>
 
-        <div className="flex items-center gap-5">
-          <ul className="hidden md:flex gap-10 text-sm tracking-wider">
+        <div className="flex items-center gap-5 my-5">
+          <ul className="hidden md:flex gap-10 text-md tracking-wider">
             <li className={`font-semibold ${robotoMono.className}`}>
               <Link
                 href="/services"

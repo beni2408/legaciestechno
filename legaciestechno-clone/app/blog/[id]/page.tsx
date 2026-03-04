@@ -49,48 +49,58 @@ export default function SingleBlogPage() {
   return (
     <section className="bg-[#fdfbf5] text-[#191919] min-h-screen  py-20">
       {/* TITLE AREA */}
-      <div className="flex justify-between border-b border-[#191919]/20 pb-10">
+      <div className="flex justify-between  border-[#191919] pb-10">
         <div className="">
           <h1
-            className={`text-6xl font-semibold leading-tight  ${syne.className} `}
+            className={`text-7xl font-semibold leading-tight  ${syne.className} `}
           >
             {blog.title}
           </h1>
 
-          <p className={`  mt-6 text-lg font-medium text-[#191919] mr-10`}>
+          <p className={`  mt-6 text-2xl font-medium text-[#191919] mr-10`}>
             {blog.excerpt}
           </p>
         </div>
 
         {/* SIDE META */}
-        <div className="text-sm space-y-6 border-l border-[#191919] pl-10 pr-20">
-          <div>
+        <div className="text-md space-y-6 border-l border-[#191919]  w-77    ml-25  ">
+          <div className="ml-10 ">
             <p
-              className={` ${robotoMono.className} text-[#191919]/50 uppercase`}
+              className={` ${robotoMono.className} text-[#191919]/50 uppercase text-md`}
             >
               Date
             </p>
-            <p className={` ${robotoMono.className} text-[#191919]`}>
-              {blog.date}
+            <p className={` ${robotoMono.className} text-[#191919] text-md`}>
+              {new Date(blog.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
             </p>
           </div>
 
-          <div>
+          <div className="ml-10">
             <p
-              className={` ${robotoMono.className} text-[#191919]/50 uppercase`}
+              className={` ${robotoMono.className} text-[#191919]/50 uppercase text-md`}
             >
               Category
             </p>
-            <p className={robotoMono.className}>{blog.category}</p>
+            <p className={` text-md w-80 uppercase ${robotoMono.className}`}>
+              {blog.category}
+            </p>
           </div>
 
-          <div>
+          <div className="ml-10">
             <p
-              className={` ${robotoMono.className} text-[#191919]/50 uppercase`}
+              className={` ${robotoMono.className}  text-[#191919]/50 uppercase text-md`}
             >
               Reading Time
             </p>
-            <p className={robotoMono.className}>{blog.readingTime}</p>
+            <span className="overflow-hidden">
+              <p className={` text-md ${robotoMono.className} uppercase`}>
+                {blog.readingTime}
+              </p>
+            </span>
           </div>
         </div>
       </div>
@@ -102,39 +112,51 @@ export default function SingleBlogPage() {
 
       {/* CONTENT */}
       <div className="mt-16 flex justify-between">
-        <div className="max-w-4xl space-y-6 text-[#191919] leading-relaxed">
+        <div className="max-w-4xl text-lg font-medium text-[#191919] leading-relaxed">
           <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           {blog.source && (
-            <div className="mt-8 pt-6 border-t border-[#191919]/20">
+            <div className=" ">
               <p
-                className={`${robotoMono.className} text-[#191919]/50 uppercase text-sm mb-2`}
+                className={`${syne.className} text-[#191919] font-bold text-lg  `}
               >
-                Source
+                Source:
               </p>
               {blog.sourceUrl ? (
                 <a
                   href={blog.sourceUrl}
                   target="_blank"
+                  style={{ textDecoration: "none", color: "#191919" }}
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline font-medium"
+                  className={`${syne.className} text-[#191919] font-medium no-underline hover:no-underline`}
                 >
                   {blog.source}
                 </a>
               ) : (
-                <p>{blog.source}</p>
+                <p
+                  style={{ textDecoration: "none" }}
+                  className={`text-[#191919] no-underline font-medium ${syne.className}`}
+                >
+                  {blog.source}
+                </p>
               )}
             </div>
           )}
         </div>
 
         {/* AUTHOR SIDE */}
-        <div className="border-l border-[#191919]  px-20 text-sm">
-          <p className="text-[#191919]/50 uppercase">Author</p>
-          <p className="mb-10">{blog.author}</p>
+        <div className="border-l border-[#191919]  px-30  text-start">
+          <p
+            className={` ${robotoMono.className} font-medium text-[#191919]/50 uppercase text-md mb-2`}
+          >
+            Author
+          </p>
+          <p className={`mb-2  font-semibold ${syne.className} text-2xl`}>
+            {blog.author}
+          </p>
         </div>
       </div>
       {/* RELATED BLOGS SECTION */}
-      <div className="mt-32 border-t border-[#191919]/20 pt-20">
+      <div className="mt-12 border-t border-[#191919]/20 pt-20">
         <div className="flex justify-between items-center mb-16">
           <h2
             className={`${syne.className} text-6xl font-semibold text-[#191919]`}

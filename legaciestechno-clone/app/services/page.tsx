@@ -7,6 +7,13 @@ import { Roboto_Mono } from "next/font/google";
 
 import { LogoAnimater } from "@/components/logoanimater";
 import Link from "next/link";
+import SectionNavigator from "@/components/SectionNavigator";
+const sections = [
+  { label: "AI & AUTOMATION", id: "ai" },
+  { label: "DIGITAL TRANSFORMATION", id: "digital" },
+  { label: "CLOUD & INFRASTRUCTURE", id: "cloud" },
+  { label: "CUSTOM SOFTWARE DEVELOPMENT", id: "software" },
+];
 
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -27,266 +34,279 @@ export default function ServicesPage() {
           <h1
             className={` ${syne.className} text-6xl lg:text-7xl font-black leading-tight`}
           >
-            We engineer intelligent solutions
+            We engineer intelligent
             <br />
-            for global impact.
+            solutions for global impact.
           </h1>
         </div>
+        <SectionNavigator sections={sections} />
       </section>
 
       {/* SERVICE SECTION TEMPLATE USAGE */}
 
-      <ServiceSection
-        icon={<i className="fa-solid fa-microchip text-8xl mt-10" />}
-        title="AI-POWERED PLATFORMS"
-        bullets={[
-          "Autonomous Agents",
-          "Intelligent Dashboards",
-          "LLM-Powered Workflows",
-        ]}
-        buttonText="GET IN TOUCH"
-      >
-        <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
-          Transform workflows with autonomous agents, intelligent dashboards,
-          and real-time insights.
-        </h2>
+      <div id="ai">
+        <ServiceSection
+          icon={<i className="fa-solid fa-microchip text-8xl mt-10" />}
+          title="AI-POWERED PLATFORMS"
+          bullets={[
+            "Autonomous Agents",
+            "Intelligent Dashboards",
+            "LLM-Powered Workflows",
+          ]}
+          buttonText="GET IN TOUCH"
+        >
+          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+            Transform workflows with autonomous agents, intelligent dashboards,
+            and real-time insights.
+          </h2>
 
-        <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
-          <p>
-            At Legacies Techno, we don’t just integrate AI — we build entire
-            platforms around it. Our AI-powered solutions are designed to
-            enhance decision-making, automate complex workflows, and deliver
-            predictive, real-time intelligence at scale.
-            <br></br>
-            <br></br>
-            We specialize in architecting systems that include large language
-            models (LLMs), autonomous agents, embeddings, and machine learning
-            pipelines that empower businesses to think and act faster. From
-            intelligent chatbots and AI copilots to advanced data analytics
-            dashboards and generative process automations,
-          </p>
+          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+            <p>
+              At Legacies Techno, we don’t just integrate AI — we build entire
+              platforms around it. Our AI-powered solutions are designed to
+              enhance decision-making, automate complex workflows, and deliver
+              predictive, real-time intelligence at scale.
+              <br></br>
+              <br></br>
+              We specialize in architecting systems that include large language
+              models (LLMs), autonomous agents, embeddings, and machine learning
+              pipelines that empower businesses to think and act faster. From
+              intelligent chatbots and AI copilots to advanced data analytics
+              dashboards and generative process automations,
+            </p>
 
-          <p>
-            our platforms are tailored for industry-specific needs and
-            future-ready operations.
-            <br />
-            <br />
-            We ensure that every model is tuned to context, aligned to business
-            KPIs, and capable of adapting over time.
-            <br />
-            <br />
-            Whether you’re in healthcare, finance, logistics, or compliance — we
-            build systems that learn from your data, respond in real time, and
-            help you stay several steps ahead.
-            <br />
-            <br />
-            Our platforms aren’t just smart — they’re strategic, scalable, and
-            secure. Let’s turn your business into an AI-native organization —
-            one intelligent platform at a time.
-          </p>
-        </div>
+            <p>
+              our platforms are tailored for industry-specific needs and
+              future-ready operations.
+              <br />
+              <br />
+              We ensure that every model is tuned to context, aligned to
+              business KPIs, and capable of adapting over time.
+              <br />
+              <br />
+              Whether you’re in healthcare, finance, logistics, or compliance —
+              we build systems that learn from your data, respond in real time,
+              and help you stay several steps ahead.
+              <br />
+              <br />
+              Our platforms aren’t just smart — they’re strategic, scalable, and
+              secure. Let’s turn your business into an AI-native organization —
+              one intelligent platform at a time.
+            </p>
+          </div>
 
-        <video
-          src="https://framerusercontent.com/assets/U4bMcTSdL0TJqLegWATqxD4F3I.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full rounded-2xl object-cover saturate-50"
-        />
-      </ServiceSection>
+          <video
+            src="https://framerusercontent.com/assets/U4bMcTSdL0TJqLegWATqxD4F3I.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50"
+          />
+        </ServiceSection>
+      </div>
 
-      <ServiceSection
-        icon={<HonestyIcon />}
-        title="ENTERPRISE SOFTWARE DEVELOPMENT"
-        bullets={[
-          "Cloud-Native Architecture",
-          "Secure System Integrations",
-          "Custom Web & Mobile Apps",
-        ]}
-        buttonText="GET IN TOUCH"
-      >
-        <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
-          From cloud-native apps to secure integrations — we architect your next
-          big system.
-        </h2>
+      <div id="digital">
+        <ServiceSection
+          icon={<HonestyIcon />}
+          title="ENTERPRISE SOFTWARE DEVELOPMENT"
+          bullets={[
+            "Cloud-Native Architecture",
+            "Secure System Integrations",
+            "Custom Web & Mobile Apps",
+          ]}
+          buttonText="GET IN TOUCH"
+        >
+          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+            From cloud-native apps to secure integrations — we architect your
+            next big system.
+          </h2>
 
-        <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
-          <p>
-            Engineering high-performance software is more than writing code —
-            it’s building resilient ecosystems that solve real-world problems at
-            scale. At Legacies Techno, we specialize in crafting custom
-            enterprise software systems that are cloud-native, modular, and
-            built to last.
-            <br></br>
-            <br></br>
-            Whether you’re rearchitecting a legacy stack or launching a
-            completely new product, our team works with you from the ground up —
-            defining architectures, optimizing infrastructure, and ensuring
-            seamless backend integrations. Our focus is on performance,
-            reliability, and long-term maintainability.
-          </p>
+          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+            <p>
+              Engineering high-performance software is more than writing code —
+              it’s building resilient ecosystems that solve real-world problems
+              at scale. At Legacies Techno, we specialize in crafting custom
+              enterprise software systems that are cloud-native, modular, and
+              built to last.
+              <br></br>
+              <br></br>
+              Whether you’re rearchitecting a legacy stack or launching a
+              completely new product, our team works with you from the ground up
+              — defining architectures, optimizing infrastructure, and ensuring
+              seamless backend integrations. Our focus is on performance,
+              reliability, and long-term maintainability.
+            </p>
 
-          <p>
-            We bring deep experience across industries and technologies,
-            including microservices, serverless deployments, secure APIs,
-            enterprise-grade authentication, and cross-platform delivery. Our
-            agile process ensures rapid delivery without compromising stability.
-            <br />
-            <br />
-            From internal ops platforms and ERP systems to customer-facing apps
-            and data ecosystems, we build what your business needs — not just
-            what’s trending.
-            <br />
-            <br />
-            We don’t stop at development. We help you scale, support, and evolve
-            your software to meet the demands of a changing world. Your vision
-            deserves more than off-the-shelf tech.
-            <br />
-            <br />
-            Let’s build your next big system — from scratch, the right way.
-          </p>
-        </div>
+            <p>
+              We bring deep experience across industries and technologies,
+              including microservices, serverless deployments, secure APIs,
+              enterprise-grade authentication, and cross-platform delivery. Our
+              agile process ensures rapid delivery without compromising
+              stability.
+              <br />
+              <br />
+              From internal ops platforms and ERP systems to customer-facing
+              apps and data ecosystems, we build what your business needs — not
+              just what’s trending.
+              <br />
+              <br />
+              We don’t stop at development. We help you scale, support, and
+              evolve your software to meet the demands of a changing world. Your
+              vision deserves more than off-the-shelf tech.
+              <br />
+              <br />
+              Let’s build your next big system — from scratch, the right way.
+            </p>
+          </div>
 
-        <video
-          src="https://framerusercontent.com/assets/MbIoDvlbmFsF0Kj9SrUHSvSToQ.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full rounded-2xl object-cover saturate-50"
-        />
-      </ServiceSection>
-      <ServiceSection
-        icon={<AiPlatformIcon />}
-        title="SMART AUTOMATION"
-        bullets={[
-          "AI OCR & Data Extraction",
-          "Compliance-Aware Workflows",
-          "RPA & Workflow Builders",
-        ]}
-        buttonText="GET IN TOUCH"
-      >
-        <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
-          Digitize operations with RPA, document intelligence, and
-          compliance-aware automation.
-        </h2>
+          <video
+            src="https://framerusercontent.com/assets/MbIoDvlbmFsF0Kj9SrUHSvSToQ.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50"
+          />
+        </ServiceSection>
+      </div>
 
-        <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
-          <p>
-            Manual processes are holding businesses back — and we’re here to
-            eliminate them.
-            <br></br>
-            <br></br>
-            At Legacies Techno, we specialize in smart automation that combines
-            robotic process automation (RPA), AI-powered document processing,
-            and compliance-aware decision logic to transform the way enterprises
-            operate.
-            <br />
-            <br />
-            We work with you to identify high-friction processes and
-            bottlenecks, then build automation workflows that dramatically
-            improve speed, accuracy, and efficiency.
-            <br />
-            <br />
-            Whether it’s automating data entry, document indexing, onboarding
-            workflows, or compliance checks, our systems ensure consistent,
-            auditable results with minimal human intervention.
-          </p>
+      <div id="cloud">
+        <ServiceSection
+          icon={<AiPlatformIcon />}
+          title="SMART AUTOMATION"
+          bullets={[
+            "AI OCR & Data Extraction",
+            "Compliance-Aware Workflows",
+            "RPA & Workflow Builders",
+          ]}
+          buttonText="GET IN TOUCH"
+        >
+          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+            Digitize operations with RPA, document intelligence, and
+            compliance-aware automation.
+          </h2>
 
-          <p>
-            Our automation stack includes intelligent OCR, human-in-the-loop
-            validation, conditional logic flows, and secure API integrations.
-            <br />
-            <br />
-            From standalone bots to end-to-end intelligent automation platforms,
-            we deliver solutions that reduce cost, increase throughput, and
-            scale with your growth.
-            <br />
-            <br />
-            No matter your industry — healthcare, legal, logistics, or finance —
-            we help you unlock operational excellence with automation built to
-            align with your goals.
-            <br />
-            <br />
-            The future is fast, error-free, and intelligent. Let us help you
-            automate toward it.
-          </p>
-        </div>
+          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+            <p>
+              Manual processes are holding businesses back — and we’re here to
+              eliminate them.
+              <br></br>
+              <br></br>
+              At Legacies Techno, we specialize in smart automation that
+              combines robotic process automation (RPA), AI-powered document
+              processing, and compliance-aware decision logic to transform the
+              way enterprises operate.
+              <br />
+              <br />
+              We work with you to identify high-friction processes and
+              bottlenecks, then build automation workflows that dramatically
+              improve speed, accuracy, and efficiency.
+              <br />
+              <br />
+              Whether it’s automating data entry, document indexing, onboarding
+              workflows, or compliance checks, our systems ensure consistent,
+              auditable results with minimal human intervention.
+            </p>
 
-        <video
-          src="https://framerusercontent.com/assets/vCGkzFH2CfVxDeNGFP9S8coCgw.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full rounded-2xl object-cover saturate-50"
-        />
-      </ServiceSection>
-      <ServiceSection
-        icon={<i className="fa-solid fa-brain text-8xl mt-10" />}
-        title="SAAS PRODUCT ENGINEERING"
-        bullets={[
-          "Multi-Tenant Architecture",
-          "MVP to Enterprise Scaling",
-          "Embedded AI Features",
-        ]}
-        buttonText="GET IN TOUCH"
-      >
-        <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
-          MVP to scale — we help you ship faster with proven frameworks and
-          AI-first logic.
-        </h2>
+            <p>
+              Our automation stack includes intelligent OCR, human-in-the-loop
+              validation, conditional logic flows, and secure API integrations.
+              <br />
+              <br />
+              From standalone bots to end-to-end intelligent automation
+              platforms, we deliver solutions that reduce cost, increase
+              throughput, and scale with your growth.
+              <br />
+              <br />
+              No matter your industry — healthcare, legal, logistics, or finance
+              — we help you unlock operational excellence with automation built
+              to align with your goals.
+              <br />
+              <br />
+              The future is fast, error-free, and intelligent. Let us help you
+              automate toward it.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
-          <p>
-            Building a SaaS product isn’t just about speed — it’s about scale,
-            stability, and delivering value at every stage of the journey.
-            <br></br>
-            <br></br>
-            At Legacies Techno, we partner with startups, scale-ups, and
-            enterprises to build SaaS products that are modern, multi-tenant,
-            AI-ready, and built for global deployment.
-            <br />
-            <br />
-            From concept validation to MVP to full-scale growth, our team brings
-            the product thinking, technical architecture, and delivery
-            experience needed to ship fast and grow with confidence.
-            <br />
-            <br />
-            We work across all layers — UI/UX, frontend, backend, DevOps, and
-            integrations — to ensure your product is market-ready from day one.
-          </p>
+          <video
+            src="https://framerusercontent.com/assets/vCGkzFH2CfVxDeNGFP9S8coCgw.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50"
+          />
+        </ServiceSection>
+      </div>
 
-          <p>
-            Our engineering approach leverages proven frameworks, modular APIs,
-            and scalable cloud infrastructure.
-            <br />
-            <br />
-            We embed AI where it matters, enabling smarter decision-making,
-            personalization, and automation from the start. Whether you’re
-            launching your first product or rebuilding for your next phase, we
-            ensure every line of code aligns with business goals and user
-            expectations.
-            <br />
-            <br />
-            With Legacies Techno, you don’t just get developers — you get a
-            committed product partner. Let’s turn your idea into a
-            category-leading SaaS platform.
-            <br />
-            <br />
-          </p>
-        </div>
+      <div id="software">
+        <ServiceSection
+          icon={<i className="fa-solid fa-brain text-8xl mt-10" />}
+          title="SAAS PRODUCT ENGINEERING"
+          bullets={[
+            "Multi-Tenant Architecture",
+            "MVP to Enterprise Scaling",
+            "Embedded AI Features",
+          ]}
+          buttonText="GET IN TOUCH"
+        >
+          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+            MVP to scale — we help you ship faster with proven frameworks and
+            AI-first logic.
+          </h2>
 
-        <video
-          src="https://framerusercontent.com/assets/xEdicqj6DHxVreqqPANZgeeEs.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full rounded-2xl object-cover saturate-50"
-        />
-      </ServiceSection>
+          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+            <p>
+              Building a SaaS product isn’t just about speed — it’s about scale,
+              stability, and delivering value at every stage of the journey.
+              <br></br>
+              <br></br>
+              At Legacies Techno, we partner with startups, scale-ups, and
+              enterprises to build SaaS products that are modern, multi-tenant,
+              AI-ready, and built for global deployment.
+              <br />
+              <br />
+              From concept validation to MVP to full-scale growth, our team
+              brings the product thinking, technical architecture, and delivery
+              experience needed to ship fast and grow with confidence.
+              <br />
+              <br />
+              We work across all layers — UI/UX, frontend, backend, DevOps, and
+              integrations — to ensure your product is market-ready from day
+              one.
+            </p>
+
+            <p>
+              Our engineering approach leverages proven frameworks, modular
+              APIs, and scalable cloud infrastructure.
+              <br />
+              <br />
+              We embed AI where it matters, enabling smarter decision-making,
+              personalization, and automation from the start. Whether you’re
+              launching your first product or rebuilding for your next phase, we
+              ensure every line of code aligns with business goals and user
+              expectations.
+              <br />
+              <br />
+              With Legacies Techno, you don’t just get developers — you get a
+              committed product partner. Let’s turn your idea into a
+              category-leading SaaS platform.
+              <br />
+              <br />
+            </p>
+          </div>
+
+          <video
+            src="https://framerusercontent.com/assets/xEdicqj6DHxVreqqPANZgeeEs.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50"
+          />
+        </ServiceSection>
+      </div>
 
       <section className="bg-[#fdfbf5] text-[#191919] py-24">
         <div className="  ">

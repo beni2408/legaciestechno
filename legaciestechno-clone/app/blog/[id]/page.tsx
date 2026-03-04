@@ -8,7 +8,7 @@ import { Roboto_Mono } from "next/font/google";
 import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 
-import { ContactAd2 } from "./ContactAd2";
+import { ContactAd } from "@/components/ContactAd";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -185,7 +185,7 @@ export default function SingleBlogPage() {
           ))}
         </div>
       </div>
-      <ContactAd2 />
+      <ContactAd />
     </section>
   );
 }

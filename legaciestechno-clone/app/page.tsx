@@ -10,6 +10,9 @@ import { NewsCard } from "@/components/newsCard";
 import { Roboto_Mono } from "next/font/google";
 import Link from "next/link";
 
+import { useEffect, useState } from "react";
+import { Blog } from "@/types/blog";
+
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -21,6 +24,24 @@ const syne = Syne({
 });
 
 export default function HomePage() {
+  const [latestBlogs, setLatestBlogs] = useState<Blog[]>([]);
+
+  useEffect(() => {
+    const stored = localStorage.getItem("blogs");
+
+    if (stored) {
+      const parsedBlogs: Blog[] = JSON.parse(stored);
+
+      // Sort by newest date
+      const sortedBlogs = parsedBlogs.sort(
+        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+      );
+
+      // Take latest 3
+      setLatestBlogs(sortedBlogs.slice(0, 3));
+    }
+  }, []);
+
   return (
     <main className="min-h-screen bg-[#fdfbf5] text-[#191919]">
       <div className="   py-16">
@@ -376,24 +397,17 @@ export default function HomePage() {
           <div className="w-full border border-[#191919]/50 mb-15 border-[0.2px] "></div>
 
           {/* NEWS GRID */}
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <NewsCard
-              image="https://framerusercontent.com/images/9j5FA8yF4YNvpGBK7f9jYsFDssI.png?width=1536&height=1024"
-              category="TECHNOLOGY & INFRASTRUCTURE"
-              title="Alphabet Inc. to Invest $40 Billion in Texas Data Centres Amid AI Build-Out"
-            />
-
-            <NewsCard
-              image="https://framerusercontent.com/images/rcIqaIutw3o4YSDDykyUiOJVs.png?width=1536&height=1024"
-              category="TECHNOLOGY & INFRASTRUCTURE"
-              title="Major Analysts See AI Infrastructure Spending Reaching Up to $4 Trillion by 2030"
-            />
-
-            <NewsCard
-              image="https://framerusercontent.com/images/5Y6pGQ4FuaIsVgtB3ocCF7ObvA.png?width=1536&height=1024"
-              category="TECHNOLOGY & INFRASTRUCTURE"
-              title="Cisco Systems Raises Forecast on AI-Driven Networking Boom"
-            />
+            {latestBlogs.map((blog) => (
+              <NewsCard
+                key={blog.id}
+                id={blog.id}
+                image={blog.image}
+                category={blog.category}
+                title={blog.title}
+              />
+            ))}
           </div>
         </div>
       </section>

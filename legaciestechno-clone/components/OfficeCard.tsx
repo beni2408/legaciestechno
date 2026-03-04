@@ -2,13 +2,19 @@ interface OfficeCardProps {
   image: string;
   city: string;
   address: string;
+  border: string;
 }
-export default function OfficeCard({ image, city, address }: OfficeCardProps) {
+export default function OfficeCard({
+  image,
+  city,
+  address,
+  border,
+}: OfficeCardProps) {
   return (
-    <div className="flex flex-col">
+    <div className={` ${border}  flex flex-col `}>
       {/* Image Container */}
-      <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden">
-        <img src={image} alt={city} className="w-full h-full object-cover" />
+      <div className={` w-full aspect-[4/3] rounded-2xl overflow-hidden`}>
+        <img src={image} alt={city} className="w-full h-full object-cover " />
       </div>
 
       {/* Content */}

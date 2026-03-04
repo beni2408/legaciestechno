@@ -4,6 +4,7 @@ const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
 import { LogoAnimater } from "@/components/logoanimater";
 import Link from "next/link";
 const robotoMono = Roboto_Mono({

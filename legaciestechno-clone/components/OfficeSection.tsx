@@ -38,6 +38,7 @@ export default function OfficesSection() {
                 image="https://framerusercontent.com/images/xXDQRggzMnnbX3kx9X9Fxrhy8.jpeg"
                 city="CHENNAI"
                 address="3A, 3rd Floor, No. 143/6C, Durga Enclave, Karapakkam, Chennai – 600097"
+                border="border-r pr-10"
               />
             </div>
 
@@ -47,6 +48,7 @@ export default function OfficesSection() {
                 image="https://framerusercontent.com/images/qvxnEQ17dQiDEy8xgM0ERIQMMA.webp"
                 city="USA"
                 address="30 N Gould St, Sheridan, 82801 Wyoming, U.S.A"
+                border="mr-10"
               />
             </div>
 
@@ -56,6 +58,7 @@ export default function OfficesSection() {
                 image="https://framerusercontent.com/images/4PBiLj2ZV8ETR8BjWOaPdoATbOc.jpg"
                 city="UAE"
                 address="Launching Soon — Stay Tuned!"
+                border="border-r pr-10"
               />
             </div>
 
@@ -65,6 +68,7 @@ export default function OfficesSection() {
                 image="https://framerusercontent.com/images/uyZQWzwkEkryEXSBO6KJq2z0Ids.webp"
                 city="GERMANY"
                 address="Launching Soon — Stay Tuned!"
+                border="mr-10"
               />
             </div>
           </div>

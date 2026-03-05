@@ -9,10 +9,10 @@ export default function TrustedBrands() {
   return (
     <section className="bg-[#19191] text-white py-7">
       {/* TOP LINE */}
-      <div className=" mb-3" />
+      <div className=" lg:mb-3 mb-3" />
 
       <div className="lg:w-full  ">
-        <div className="flex items-center">
+        <div className="lg:flex items-center flex-col flex">
           {/* LABEL */}
           <div className=" lg:w-[220px]">
             <p

@@ -57,7 +57,9 @@ export default function RootLayout({
           md:m-3
           m-3
 
-          px-12
+          lg:px-12
+
+          px-5
 
 
           

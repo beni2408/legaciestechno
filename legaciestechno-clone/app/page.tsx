@@ -63,22 +63,27 @@ export default function HomePage() {
           {/* LEFT CONTENT */}
           <div className="flex-1  ">
             <h1
-              className={` ${syne.className}  text-4xl sm:text-5xl lg:text-7xl font-semibold leading-19 `}
+              className={` ${syne.className} mt-10 lg:mt-0  w-88 md:w-180   lg:w-full text-5xl  lg:text-6xl font-[500] lg:font-[500] leading-12 lg:leading-19 `}
             >
-              Engineering the <br />
-              Future with AI, <br />
-              Innovation & <br />
-              Purpose.
+              Engineering the Future with AI, Innovation & Purpose.
             </h1>
 
-            <p className=" text-2xl leading-relaxed max-w-xl font-[300] font-satoshi ">
+            <p
+              className=" 
+            
+            lg:text-2xl leading-relaxed max-w-xl md:w-130 font-[300] font-satoshi *:
+            mt-8 lg:mt-0 text-xl 
+            
+            
+            "
+            >
               At Legacies Techno, we build scalable digital ecosystems,
               intelligent systems, & future-ready platforms that redefine what's
               possible..
             </p>
 
             {/* Logo / Icon */}
-            <div className="  mt-12">
+            <div className="  lg:mt-12 mt-0   ">
               <div className="flex flex-row items-start gap-4 ">
                 <div className="flex items-start justify-start lg:w-30   ">
                   <div className="flex  ">
@@ -94,8 +99,10 @@ export default function HomePage() {
             <div
               className=" w-full 
             lg:w-160 lg:h-160 
+
+            md:h-100
             
-            h-[500px]   rounded-2xl overflow-hidden"
+            h-50 w-50   rounded-2xl overflow-hidden"
             >
               <video
                 src="https://framerusercontent.com/assets/za6N4j7jFO8ynuWiTOCihTLfvD8.mp4"
@@ -103,13 +110,19 @@ export default function HomePage() {
                 loop
                 muted
                 playsInline
-                className="  lg: w-full h-200 object-cover saturate-30"
+                className="  lg:w-full lg:h-200 lg:object-cover object-contain saturate-30"
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="w-full border border-[#191919] border-[0.8px] lg:mt-7"></div>
+      <div
+        className="
+      
+      w-full border border-[#191919] border-[0.8px] lg:mt-7
+      mt-10
+      "
+      ></div>
 
       {/* section2 */}
       <TrustedBrands />
@@ -181,7 +194,12 @@ export default function HomePage() {
               </h2>
 
               <p
-                className={`text-[#191919]/60 font-satoshi  leading-relaxed font-normal lg:text-[22px] lg:w-105`}
+                className={`text-[#191919]/60 
+                  
+                  font-satoshi  leading-relaxed font-normal lg:text-[22px] lg:w-105
+
+                  
+                  `}
               >
                 At Legacies Techno, we engineer breakthrough solutions that
                 scale globally. From AI-powered compliance platforms to

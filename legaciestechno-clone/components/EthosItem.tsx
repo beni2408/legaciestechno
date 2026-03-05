@@ -1,25 +1,39 @@
 import { Syne } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
+const robotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
+
 export function EthosItem({ number, title, description }: any) {
   return (
-    <div className="flex items-start gap-6">
+    <div className="flex items-start gap-6 lg:ml-4">
       {/* NUMBER */}
-      <div className="flex items-center justify-center w-10 h-10 rounded rounded-4xl border border-black/30 text-sm">
+      <div
+        className={` ${robotoMono.className} flex items-center justify-center w-5 h-5 p-4 rounded-full border border-[#191919] font-mono text-sm`}
+      >
         {number}
       </div>
 
       {/* TEXT */}
-      <div className="space-y-2">
-        <h3 className={`text-xl font-semibold tracking-wide ${syne.className}`}>
+      <div className="space-y-1">
+        <h3
+          className={`lg:text-3xl font-[500] tracking-wide ${syne.className}`}
+        >
           {title}
         </h3>
 
-        <p className={`text-black/70 leading-relaxed `}>{description}</p>
+        <p
+          className={`text-[#191919]/80  lg:text-[18px] font-[200] font-satoshi leading-8 `}
+        >
+          {description}
+        </p>
       </div>
     </div>
   );

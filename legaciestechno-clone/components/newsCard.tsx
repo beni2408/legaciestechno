@@ -65,24 +65,24 @@ export function NewsCard({ id, image, category, title }: NewsCardProps) {
     <Link href={`/blog/${id}`}>
       <div className="group cursor-pointer">
         {/* IMAGE */}
-        <div className="rounded-2xl overflow-hidden mb-5">
+        <div className="rounded-2xl mb-3 overflow-hidden lg:h-[237px] w-full ">
           <img
             src={image}
             alt={title}
-            className="w-full h-[280px] object-cover group-hover:scale-105 transition duration-700"
+            className="  w-full lg:h-[237px] object-cover group-hover:scale-105 transition duration-700"
           />
         </div>
 
         {/* CATEGORY */}
         <p
-          className={`${robotoMono.className} text-center font-semibold text-sm tracking-widest text-[#191919]/50 mb-2`}
+          className={`${robotoMono.className}  uppercase text-center font-normal text-sm tracking-widest text-[#191919]  mb-1`}
         >
           {category}
         </p>
 
         {/* TITLE */}
         <h3
-          className={`${syne.className} text-2xl leading-snug group-hover:text-black transition`}
+          className={`${syne.className} lg:text-2xl lg:font-[500]  leading-tight group-hover:text-black transition`}
         >
           {title}
         </h3>

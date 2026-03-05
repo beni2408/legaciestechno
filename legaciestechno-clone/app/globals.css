@@ -85,24 +85,31 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-@keyframes logo-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+.logo-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
-.animate-logo-scroll {
-  animation: logo-scroll 6s linear infinite;
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  will-change: transform;
 }
 
-.animate-logo-scroll:hover {
-  animation-play-state: paused;
+.logo-img {
+  height: 63px;
+  flex-shrink: 0;
+  opacity: 1;
+  filter: saturate(0);
+  transition: opacity 0.3s ease;
 }
 
+.logo-img:hover {
+  opacity: 1;
+}
 .view-cursor {
   position: fixed;
   top: 0;

@@ -7,63 +7,89 @@ const robotoMono = Roboto_Mono({
 
 export default function TrustedBrands() {
   return (
-    <section className="bg-[#19191] text-white py-5">
+    <section className="bg-[#19191] text-white py-7">
       {/* TOP LINE */}
-      <div className=" mb-6" />
+      <div className=" mb-3" />
 
-      <div className="max-w-7xl  ">
+      <div className="lg:w-full  ">
         <div className="flex items-center">
           {/* LABEL */}
-          <div className="w-[160px]">
-            <p className="text-sm tracking-widest text-[#191919]">TRUSTED BY</p>
+          <div className=" lg:w-[220px]">
+            <p
+              className={` ${robotoMono.className} text-sm tracking-widest text-[#191919] lg:mr-10 lg:border-r lg:h-15 items-center flex justify-start`}
+            >
+              TRUSTED BY
+            </p>
           </div>
 
           {/* LOGOS */}
-          <div className="flex-1 overflow-hidden relative">
-            <div className="flex items-center justify-between gap-20 animate-logo-scroll ">
-              <img
-                src="/audiology.png"
-                className="h-5 grayscale-100 opacity-50  hover:opacity-100 transition"
-              />
-              <img
-                src="/brand_logos/dentaprodigital.png"
-                className="h-5 grayscale-100 opacity-50 hover:opacity-100 transition"
-              />
-              <img
-                src="/brand_logos/wellgenpro-logo.png"
-                className="h-10 grayscale-100 opacity-50  hover:opacity-100 transition"
-              />
-              <img
-                src="/brand_logos/Qualiconvert.png"
-                className="h-6 grayscale-100 opacity-50 hover:opacity-100 transition "
-              />
-              <img
-                src="https://framerusercontent.com/images/ccgJwIpyRN7xD6oYFuVF5HERDY.png"
-                className="h-19 opacity-50  hover:opacity-100 transition grayscale-100"
-              />
-              <img
-                src="https://framerusercontent.com/images/RMWoyyK4OZ58PQnAgSUsnjw0uRU.png"
-                className="h-20 opacity-50  hover:opacity-100 transition grayscale-100"
-              />
-              <img
-                src="https://framerusercontent.com/images/vW1UWuyNjLZcSeLEYjPdeH7aY.png"
-                className="h-15 opacity-50  hover:opacity-100 transition grayscale-100"
-              />
-              <img
-                src="https://framerusercontent.com/images/WlyV0IAe1FY1d3R13Q1YnNwv4c.png"
-                className="h-15 opacity-50  hover:opacity-100 transition grayscale-100"
-              />
-              <img
-                src="/brand_logos/jiologo.png"
-                className="h-15 opacity-50  hover:opacity-100 transition grayscale-100"
-              />
-            </div>
-          </div>
+          <LogoScroller />
         </div>
       </div>
 
       {/* BOTTOM LINE */}
       <div className=" mt-6" />
     </section>
+  );
+}
+import { useEffect, useRef } from "react";
+
+function LogoScroller() {
+  const trackRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  const logos = [
+    "https://framerusercontent.com/images/LgSUtnnbFpshquQXHd6fTZjzmg.png",
+    "https://framerusercontent.com/images/NxQsFUZp6e78Lks84dz4RdolLTM.png",
+    "https://framerusercontent.com/images/GlGQY5vsZGETufjV1gPlbINuIMU.png",
+    "https://framerusercontent.com/images/sPB94iy0PwoGtzj7d4Cj7SJmS4.png",
+    "https://framerusercontent.com/images/ccgJwIpyRN7xD6oYFuVF5HERDY.png",
+    "https://framerusercontent.com/images/RMWoyyK4OZ58PQnAgSUsnjw0uRU.png",
+    "https://framerusercontent.com/images/vW1UWuyNjLZcSeLEYjPdeH7aY.png",
+    "https://framerusercontent.com/images/R1g4DoXxtxD30j0gwjOPVqcs.png",
+    "https://framerusercontent.com/images/1Eo1ZgzCwmWtlGQFUeovvchKns.png",
+  ];
+
+  useEffect(() => {
+    const track = trackRef.current;
+    const wrapper = wrapperRef.current;
+
+    let position = 0;
+    let speed = 1.4; // normal speed (faster)
+    const slowSpeed = 0.5; // hover speed (still slower but faster than before)
+
+    const animate = () => {
+      position -= speed;
+
+      if (Math.abs(position) >= track.scrollWidth / 2) {
+        position = 0;
+      }
+
+      track.style.transform = `translateX(${position}px)`;
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    wrapper.addEventListener("mouseenter", () => {
+      speed = slowSpeed;
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+      speed = 1.4;
+    });
+  }, []);
+
+  const loopLogos = [...logos, ...logos];
+
+  return (
+    <div ref={wrapperRef} className="logo-wrapper">
+      <div ref={trackRef} className="logo-track">
+        {loopLogos.map((logo, i) => (
+          <img key={i} src={logo} alt="logo" className="logo-img" />
+        ))}
+      </div>
+    </div>
   );
 }

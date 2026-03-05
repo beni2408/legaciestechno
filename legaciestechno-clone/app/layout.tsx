@@ -5,7 +5,18 @@ import Navbar from "@/components/Navbar";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Syne } from "next/font/google";
 import Footer from "@/components/Footer";
+import localFont from "next/font/local";
 
+const satoshi = localFont({
+  src: [
+    {
+      path: "../public/fonts/Satoshi-Variable.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-satoshi",
+});
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -40,7 +51,20 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-[#fdfbf5]">
       <body className="font-satoshi antialiased">
-        <div className="border border-black/50 m-4 bg-[#fdfbf5] px-10 border-[1px]">
+        <div
+          className="
+          border-[1.45px] border-[#191919] lg:m-4 bg-[#fdfbf5] 
+          md:m-3
+          m-3
+
+          px-12
+
+
+          
+         
+        
+        "
+        >
           <Navbar />
           {children}
           <Footer />

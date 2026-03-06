@@ -18,7 +18,7 @@ export default function Navbar() {
       <nav className="lg:w-335 flex items-center justify-between py-5 px-4 lg:px-0">
         {/* LEFT → Logo */}
         <div className="flex items-center gap-3">
-          <Image src="/logo2.png" alt="Logo" width={260} height={140} />
+          <Image src="/logo2.png" alt="Logo" width={240} height={140} />
         </div>
 
         {/* Desktop Menu */}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ContactAd } from "@/components/ContactAd";
 import { Syne } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
+import { ServicesContactAd } from "@/components/ServicesContactCard";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -20,20 +21,18 @@ export default function WorkPage() {
   return (
     <main className="bg-[#fdfbf5] text-[#191919]">
       {/* HEADER */}
-      <section className=" border-b border-[#191919]/20">
-        <div className="my-10">
+      <section className=" border-b border-[#191919]">
+        <div className="lg:my-20 my-7">
           <p
-            className={`${robotoMono.className} text-sm uppercase tracking-widest text-[#191919]/60 mb-6`}
+            className={`${robotoMono.className} lg:font-[400] font-[500] text-sm uppercase tracking-widest text-[#191919]/90 lg:mb-3`}
           >
             Work
           </p>
 
           <h1
-            className={`${syne.className} text-6xl lg:text-8xl font-semibold leading-tight`}
+            className={`${syne.className} leading-12 w-90  text-[43px] lg:font-[500] lg:leading-23 lg:text-8xl lg:w-200  font-[500] `}
           >
-            Our branding
-            <br />
-            success stories.
+            Our branding success stories.
           </h1>
         </div>
       </section>
@@ -73,7 +72,7 @@ export default function WorkPage() {
         link="/work/JIO"
       />
 
-      <ContactAd />
+      <ServicesContactAd />
     </main>
   );
 }

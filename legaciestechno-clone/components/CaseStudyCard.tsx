@@ -28,19 +28,40 @@ export default function CaseStudyCard({
   link,
 }: CaseStudyCardProps) {
   return (
-    <section className="border-b border-[#191919]/20">
-      <div className="py-25 flex gap-16">
+    <section className="border-b pb-10 lg:pb-0 border-[#191919]">
+      <div className="lg:py-15  flex flex-col lg:flex-row gap-16">
         {/* LEFT SIDE */}
         <div className="w-[35%] flex flex-col justify-between">
           <div>
+            <p
+              className={`${robotoMono.className} lg:hidden  text-sm uppercase tracking-widest text-[#191919] mt-8`}
+            >
+              {category}
+            </p>
             <h2
-              className={`${syne.className} text-5xl font-semibold leading-tight`}
+              className={`${syne.className} w-90 md:w-150 lg:w-20 lg:text-5xl text-4xl font-semibold leading-tight`}
             >
               {title}
             </h2>
+            <Link
+              href={link}
+              className={`${robotoMono.className} mt-5 text-sm text-center lg:hidden inline-flex group items-center justify-center px-1.5 py-1 border w-40 border-[#191919] rounded-md tracking-widest overflow-hidden`}
+            >
+              <span className="relative h-5 overflow-hidden flex items-center justify-center w-full leading-none">
+                {/* Top text */}
+                <span className="absolute inset-0 flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                  VIEW PROJECT
+                </span>
+
+                {/* Bottom text */}
+                <span className="absolute inset-0 translate-y-full flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:translate-y-0">
+                  VIEW PROJECT
+                </span>
+              </span>
+            </Link>
 
             <p
-              className={`${robotoMono.className} text-sm uppercase tracking-widest text-[#191919]/60 mt-8`}
+              className={`${robotoMono.className} hidden lg:block text-sm uppercase tracking-widest text-[#191919] mt-8`}
             >
               {category}
             </p>
@@ -48,23 +69,32 @@ export default function CaseStudyCard({
 
           <Link
             href={link}
-            className={`${robotoMono.className} mt-12 w-fit px-6 py-3 border border-[#191919] text-sm uppercase tracking-widest hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
+            className={`${robotoMono.className} text-sm text-center lg:block hidden group items-center justify-center px-1.5 py-1 border w-40 border-[#191919] rounded-md text-md tracking-widest overflow-hidden`}
           >
-            View Project
+            <span className="relative h-5 overflow-hidden block w-full">
+              {/* Top text */}
+              <span className="block w-full text-center transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                VIEW PROJECT
+              </span>
+
+              {/* Bottom text */}
+              <span className="absolute left-0 top-full w-full text-center block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                VIEW PROJECT
+              </span>
+            </span>
           </Link>
         </div>
 
         {/* RIGHT SIDE */}
-        {/* RIGHT SIDE */}
-        {/* RIGHT SIDE */}
-        <div className="w-[65%]">
+
+        <div className="lg:w-[80%]">
           <Link href={link}>
             <div className="relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer">
               {/* IMAGE */}
               <img
                 src={image}
                 alt={title}
-                className="w-full object-cover transition duration-500 group-hover:scale-[1.02] "
+                className="w-full  h-50 lg:h-125 object-cover transition duration-500 group-hover:scale-[1.05] "
               />
 
               {/* OVERLAY */}

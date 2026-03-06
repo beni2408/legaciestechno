@@ -4,10 +4,12 @@ import ServiceSection from "@/components/serviceSection";
 import { Syne } from "next/font/google";
 
 import { Roboto_Mono } from "next/font/google";
+import { ServicesContactAd } from "@/components/ServicesContactCard";
 
 import { LogoAnimater } from "@/components/logoanimater";
 import Link from "next/link";
 import SectionNavigator from "@/components/SectionNavigator";
+import { ContactAd } from "@/components/ContactAd";
 const sections = [
   { label: "AI & AUTOMATION", id: "ai" },
   { label: "DIGITAL TRANSFORMATION", id: "digital" },
@@ -29,14 +31,12 @@ export default function ServicesPage() {
   return (
     <main className="bg-[#fdfbf5] text-[#191919]">
       {/* HERO */}
-      <section className="py-24 border-b border-[#191919]/20">
-        <div className=" ">
+      <section className="lg:py-14 pt-7  border-b border-[#191919]">
+        <div className=" lg:mb-20 mb-10">
           <h1
-            className={` ${syne.className} text-6xl lg:text-7xl font-black leading-tight`}
+            className={` ${syne.className} text-5xl lg:text-8xl font-[500] lg:leading-25`}
           >
-            We engineer intelligent
-            <br />
-            solutions for global impact.
+            We engineer intelligent solutions for global impact.
           </h1>
         </div>
         <SectionNavigator sections={sections} />
@@ -55,14 +55,26 @@ export default function ServicesPage() {
           ]}
           buttonText="GET IN TOUCH"
         >
-          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+          {/* <div className="w-120 pr-50 flex "> */}
+          <video
+            src="https://framerusercontent.com/assets/U4bMcTSdL0TJqLegWATqxD4F3I.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className=" rounded-2xl object-cover saturate-50 lg:hidden md:block "
+          />
+
+          <h2
+            className={` ${syne.className} mt-10 text-4xl lg:text-6xl font-[500] leading-tight pb-5`}
+          >
             Transform workflows with autonomous agents, intelligent dashboards,
             and real-time insights.
           </h2>
 
-          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
-            <p>
-              At Legacies Techno, we don’t just integrate AI — we build entire
+          <div className=" flex flex-col font-satoshi  text-[18px]  lg:grid lg:grid-cols-2 gap-8 text-[#191919]/90 lg:leading-relaxed lg:text-xl">
+            <p className="  ">
+              At Legacies Techno, we don’t just integrate AI — we build entirez̧
               platforms around it. Our AI-powered solutions are designed to
               enhance decision-making, automate complex workflows, and deliver
               predictive, real-time intelligence at scale.
@@ -75,7 +87,7 @@ export default function ServicesPage() {
               dashboards and generative process automations,
             </p>
 
-            <p>
+            <p className=" font-[400]">
               our platforms are tailored for industry-specific needs and
               future-ready operations.
               <br />
@@ -101,7 +113,7 @@ export default function ServicesPage() {
             loop
             muted
             playsInline
-            className="w-full rounded-2xl object-cover saturate-50"
+            className="w-full rounded-2xl object-cover saturate-50 lg:block md:hidden hidden"
           />
         </ServiceSection>
       </div>
@@ -117,12 +129,22 @@ export default function ServicesPage() {
           ]}
           buttonText="GET IN TOUCH"
         >
-          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+          <video
+            src="https://framerusercontent.com/assets/MbIoDvlbmFsF0Kj9SrUHSvSToQ.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50  lg:hidden md:block"
+          />
+          <h2
+            className={` ${syne.className} mt-10 text-4xl lg:text-6xl font-[500] leading-tight pb-5`}
+          >
             From cloud-native apps to secure integrations — we architect your
             next big system.
           </h2>
 
-          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+          <div className=" flex font-[400] flex-col font-satoshi  text-[18px]  lg:grid lg:grid-cols-2 gap-8 text-[#191919]/90 lg:leading-relaxed lg:text-xl">
             <p>
               Engineering high-performance software is more than writing code —
               it’s building resilient ecosystems that solve real-world problems
@@ -166,7 +188,7 @@ export default function ServicesPage() {
             loop
             muted
             playsInline
-            className="w-full rounded-2xl object-cover saturate-50"
+            className="w-full rounded-2xl object-cover saturate-50 hidden lg:block md:hidden"
           />
         </ServiceSection>
       </div>
@@ -182,12 +204,22 @@ export default function ServicesPage() {
           ]}
           buttonText="GET IN TOUCH"
         >
-          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+          <video
+            src="https://framerusercontent.com/assets/vCGkzFH2CfVxDeNGFP9S8coCgw.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50 lg:hidden md:block "
+          />
+          <h2
+            className={` ${syne.className} mt-10 text-4xl lg:text-6xl font-[500] leading-tight pb-5`}
+          >
             Digitize operations with RPA, document intelligence, and
             compliance-aware automation.
           </h2>
 
-          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+          <div className="flex font-[400] flex-col font-satoshi  text-[18px]  lg:grid lg:grid-cols-2 gap-8 text-[#191919]/90 lg:leading-relaxed lg:text-xl">
             <p>
               Manual processes are holding businesses back — and we’re here to
               eliminate them.
@@ -235,7 +267,7 @@ export default function ServicesPage() {
             loop
             muted
             playsInline
-            className="w-full rounded-2xl object-cover saturate-50"
+            className="w-full rounded-2xl object-cover saturate-50 hidden lg:block md:hidden "
           />
         </ServiceSection>
       </div>
@@ -251,12 +283,22 @@ export default function ServicesPage() {
           ]}
           buttonText="GET IN TOUCH"
         >
-          <h2 className={` ${syne.className} text-6xl font-bold leading-tight`}>
+          <video
+            src="https://framerusercontent.com/assets/xEdicqj6DHxVreqqPANZgeeEs.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full rounded-2xl object-cover saturate-50 lg:hidden md:block"
+          />
+          <h2
+            className={` ${syne.className} mt-10 text-4xl lg:text-6xl font-[500] leading-tight pb-5`}
+          >
             MVP to scale — we help you ship faster with proven frameworks and
             AI-first logic.
           </h2>
 
-          <div className="grid grid-cols-2 gap-8 text-[#191919]/70 leading-relaxed text-xl">
+          <div className="flex font-[400] flex-col font-satoshi  text-[18px]  lg:grid lg:grid-cols-2 gap-8 text-[#191919]/90 lg:leading-relaxed lg:text-xl">
             <p>
               Building a SaaS product isn’t just about speed — it’s about scale,
               stability, and delivering value at every stage of the journey.
@@ -303,57 +345,12 @@ export default function ServicesPage() {
             loop
             muted
             playsInline
-            className="w-full rounded-2xl object-cover saturate-50"
+            className="w-full rounded-2xl object-cover saturate-50 hidden lg:block md:hidden "
           />
         </ServiceSection>
       </div>
 
-      <section className="bg-[#fdfbf5] text-[#191919] py-24">
-        <div className="  ">
-          <div className="flex">
-            {/* LEFT SIDE */}
-            <div className="space-y-10">
-              <p
-                className={` ${robotoMono.className} text-sm tracking-widest text-[#191919]/60`}
-              >
-                CONTACT
-              </p>
-
-              <h1
-                className={`${syne.className} text-4xl sm:text-5xl  w-200 lg:text-7xl font-semibold leading-tight`}
-              >
-                LET’S ENGINEER THE <br />
-                FUTURE — <br />
-                TOGETHER
-              </h1>
-
-              <LogoAnimater />
-            </div>
-
-            {/* RIGHT SIDE */}
-            <div className="relative ml-20">
-              {/* VERTICAL DIVIDER */}
-              <div className="hidden lg:block absolute  top-0 h-full w-px bg-[#191919]/20 border border-black/10 border-0.5" />
-
-              <div className="space-y-16 flex flex-col justify-between h-full ml-10">
-                <p className="text-lg text-[#191919]/70 leading-relaxed">
-                  Whether you’re scaling a digital product, modernizing
-                  operations, or building from the ground up — Legacies Techno
-                  is your partner in crafting intelligent, enterprise-grade
-                  solutions that create lasting impact.
-                </p>
-
-                <Link
-                  href="/contact"
-                  className={`${robotoMono.className} inline-block px-8 py-4 bg-[#191919] w-52 text-center text-[#fdfbf5] text-sm tracking-widest rounded-lg hover:bg-[#191919]/80 hover:scale-105 transition-all duration-300 relative z-10`}
-                >
-                  GET IN TOUCH
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServicesContactAd />
     </main>
   );
 }

@@ -9,6 +9,7 @@ import Link from "next/link";
 import BlogCard from "@/components/BlogCard";
 
 import { ContactAd } from "@/components/ContactAd";
+import { ServicesContactAd } from "@/components/ServicesContactCard";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -47,24 +48,26 @@ export default function SingleBlogPage() {
     .slice(0, 3);
 
   return (
-    <section className="bg-[#fdfbf5] text-[#191919] min-h-screen  py-20">
+    <section className="bg-[#fdfbf5] text-[#191919] min-h-screen  lg:py-15 ">
       {/* TITLE AREA */}
-      <div className="flex justify-between  border-[#191919] pb-10">
+      <div className="lg:flex lg:flex-row flex-col justify-between lg:w-full border-[#191919] pb-10">
         <div className="">
           <h1
-            className={`text-7xl font-semibold leading-tight  ${syne.className} `}
+            className={`lg:text-[78px] text-5xl mt-10 lg:mt-0 font-[500] lg:w-220  lg:font-[500]  lg:leading-20  ${syne.className} `}
           >
             {blog.title}
           </h1>
 
-          <p className={`  mt-6 text-2xl font-medium text-[#191919] mr-10`}>
+          <p
+            className={` font-satoshi lg:w-250 mt-6 text-xl lg:text-2xl lg:leading-9 font-medium text-[#191919] `}
+          >
             {blog.excerpt}
           </p>
         </div>
-
+        <div className="border border-[#191919] w-full lg:hidden mt-10 border-[0.2px]"></div>
         {/* SIDE META */}
-        <div className="text-md space-y-6 border-l border-[#191919]  w-77    ml-25  ">
-          <div className="ml-10 ">
+        <div className="text-md space-y-6 lg:border-l  lg:mt-0 pt-10 lg:pt-0 border-[#191919]  w-77     ">
+          <div className="lg:ml-10 ">
             <p
               className={` ${robotoMono.className} text-[#191919]/50 uppercase text-md`}
             >
@@ -79,7 +82,7 @@ export default function SingleBlogPage() {
             </p>
           </div>
 
-          <div className="ml-10">
+          <div className="lg:ml-10">
             <p
               className={` ${robotoMono.className} text-[#191919]/50 uppercase text-md`}
             >
@@ -90,7 +93,7 @@ export default function SingleBlogPage() {
             </p>
           </div>
 
-          <div className="ml-10">
+          <div className="lg:ml-10">
             <p
               className={` ${robotoMono.className}  text-[#191919]/50 uppercase text-md`}
             >
@@ -106,18 +109,25 @@ export default function SingleBlogPage() {
       </div>
 
       {/* IMAGE */}
-      <div className="mt-12">
-        <img src={blog.image} alt={blog.title} className="w-full rounded-xl" />
+      <div className="lg:mt-5">
+        <img
+          src={blog.image}
+          alt={blog.title}
+          className="w-full rounded-xl
+        
+        lg:h-190 object-cover
+        "
+        />
       </div>
 
       {/* CONTENT */}
-      <div className="mt-16 flex justify-between">
-        <div className="max-w-4xl text-lg font-medium text-[#191919] leading-relaxed">
+      <div className="lg:mt-16 mt-10 lg:flex lg:flex-row flex-col text-sm justify-start">
+        <div className="lg:w-260 lg:pr-10 text-md lg:text-lg font-medium text-[#191919] leading-relaxed ">
           <div dangerouslySetInnerHTML={{ __html: blog.content }} />
           {blog.source && (
             <div className=" ">
               <p
-                className={`${syne.className} text-[#191919] font-bold text-lg  `}
+                className={`${syne.className} text-[#191919] font-bold lg:text-lg text-sm `}
               >
                 Source:
               </p>
@@ -144,36 +154,40 @@ export default function SingleBlogPage() {
         </div>
 
         {/* AUTHOR SIDE */}
-        <div className="border-l border-[#191919]  px-30  text-start">
+        <div className="lg:border-l lg:border-t-0 border-t mt-10 lg:mt-0 border-[#191919] pt-10    text-start ">
           <p
-            className={` ${robotoMono.className} font-medium text-[#191919]/50 uppercase text-md mb-2`}
+            className={` ${robotoMono.className} lg:ml-10 font-medium text-[#191919]/50 uppercase text-md mb-2`}
           >
             Author
           </p>
-          <p className={`mb-2  font-semibold ${syne.className} text-2xl`}>
+          <p
+            className={`mb-2 lg:ml-10 font-[500] ${syne.className} lg:text-2xl text-2xl`}
+          >
             {blog.author}
           </p>
         </div>
       </div>
       {/* RELATED BLOGS SECTION */}
-      <div className="mt-12 border-t border-[#191919]/20 pt-20">
-        <div className="flex justify-between items-center mb-16">
+      <div className="mt-12 lg:mt-10  border-t border-[#191919] pt-8 lg:pt-15">
+        <div className="flex lg:flex-row flex-col lg:border-b border-[#191919] justify-between items-center lg:pb-15 lg:mb-16">
           <h2
-            className={`${syne.className} text-6xl font-semibold text-[#191919]`}
+            className={`${syne.className} lg:text-6xl text-4xl font-[500] text-[#191919]`}
           >
-            RELATED BLOGS
+            RELATED NEWS
           </h2>
 
           <Link href="/blog">
             <button
-              className={`${robotoMono.className} px-6 py-2 border border-[#191919]/30 text-[#191919] uppercase tracking-widest rounded-md hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
+              className={`${robotoMono.className} lg:block hidden px-6 py-2 border border-[#191919]/30 text-[#191919] uppercase tracking-widest rounded-md hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
             >
               See All
             </button>
           </Link>
         </div>
 
-        <div className="grid grid-cols-3 gap-10">
+        <div className="border border-[#191919] border-[0.2px] mt-7 mb-10 lg:hidden block md:block"></div>
+
+        <div className="lg:grid lg:grid-cols-3 lg:gap-10 flex flex-col">
           {relatedBlogs.map((item) => (
             <BlogCard
               key={item.id}
@@ -185,7 +199,7 @@ export default function SingleBlogPage() {
           ))}
         </div>
       </div>
-      <ContactAd />
+      <ServicesContactAd />
     </section>
   );
 }

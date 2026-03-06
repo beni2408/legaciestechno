@@ -149,6 +149,19 @@ import { Blog } from "@/types/blog";
 import { Syne } from "next/font/google";
 import { Roboto_Mono } from "next/font/google";
 import { ContactAd } from "@/components/ContactAd";
+import { ServicesContactAd } from "@/components/ServicesContactCard";
+// import localFont from "next/font/local";
+
+// const satoshi = localFont({
+//   src: [
+//     {
+//       path: "../public/fonts/Satoshi-Variable.woff2",
+//       weight: "400",
+//       style: "normal",
+//     },
+//   ],
+//   variable: "--font-satoshi",
+// });
 
 const syne = Syne({
   subsets: ["latin"],
@@ -181,12 +194,16 @@ export default function BlogPage() {
   };
 
   return (
-    <section className="bg-[#fdfbf5] text-[#191919] py-20">
+    <section className="bg-[#fdfbf5] text-[#191919]  lg:py-15">
       <div>
         {/* HEADER */}
-        <div className="flex justify-between items-end border-b border-[#191919]/20 pb-10">
-          <h1 className={`${syne.className} text-8xl font-semibold`}>Blog</h1>
-          <p className="text-xl max-w-sm text-[#191919]">
+        <div className="lg:flex lg:flex-row flex-col  mt-10 lg:mt-0 justify-between items-end  border-b border-[#191919] pb-8 lg:pb-18">
+          <h1
+            className={`${syne.className} lg:text-8xl text-5xl lg:font-[500]`}
+          >
+            Blog
+          </h1>
+          <p className="lg:text-2xl text-xl mt-3 lg:mt-0 lg:max-w-sm text-[#191919] font-satoshi md:w-200">
             Discover insights, inspiration, and expert advice on our engaging
             blog.
           </p>
@@ -194,17 +211,17 @@ export default function BlogPage() {
 
         {/* FEATURED BLOGS */}
         {featuredBlogs.length > 0 && (
-          <div className="grid grid-cols-2 gap-12 mt-16">
+          <div className="lg:grid lg:grid-cols-2 gap-12 mt-16">
             {featuredBlogs.slice(0, 2).map((blog) => (
               <BlogCard key={blog.id} id={blog.id} {...blog} large />
             ))}
           </div>
         )}
 
-        <div className="w-full border border-[#191919]/20 my-16"></div>
+        <div className="w-full border border-[#191919] border-[0.2px] my-10 lg:block hidden"></div>
 
         {/* NORMAL BLOGS */}
-        <div className="grid grid-cols-3 gap-12">
+        <div className="lg:grid lg:grid-cols-3 lg:gap-12 flex flex-col">
           {visibleBlogs.map((blog) => (
             <BlogCard key={blog.id} id={blog.id} {...blog} />
           ))}
@@ -215,7 +232,7 @@ export default function BlogPage() {
           <div className="flex justify-center mt-16">
             <button
               onClick={loadMore}
-              className={`${robotoMono.className} px-8 py-3 border border-[#191919] text-[#191919] uppercase tracking-widest rounded-md hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
+              className={`font-bold bg-[#191919]/80 px-3 py-2 border border-[#191919] text-[#fdfbf5]   rounded-md hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
             >
               Load More
             </button>
@@ -223,7 +240,7 @@ export default function BlogPage() {
         )}
       </div>
 
-      <ContactAd />
+      <ServicesContactAd />
     </section>
   );
 }

@@ -88,18 +88,31 @@ export default function BlogCard({
 }: BlogCardProps) {
   return (
     <Link href={`/blog/${id}`}>
-      <div className="group cursor-pointer">
+      <div className="group cursor-pointer lg:mb-0 mb-10 ">
         <div className="overflow-hidden rounded-2xl">
           <img
             src={image}
             alt={title}
-            className="w-full object-cover transition duration-500 group-hover:scale-105"
+            className={`w-full object-cover transition duration-500 group-hover:scale-105 ${
+              large ? "lg:h-[360px]" : "lg:h-[240px]"
+            }
+            
+            ${large ? "h-[200px]" : "h-[200px]"}
+            ${large ? "md:h-[390px]" : "md:h-[390px]"}
+            
+            `}
           />
         </div>
 
         {category && (
           <p
-            className={` ${robotoMono.className} text-md text-center uppercase tracking-widest text-[#191919] mt-5`}
+            className={` ${robotoMono.className} text-sm lg:${
+              large ? "lg:text-start" : "lg:text-center"
+            } uppercase tracking-widest text-[#191919] mt-3 lg:font-400
+            
+            ${large ? "text-start" : "text-center"}
+            
+            `}
           >
             {category}
           </p>
@@ -107,8 +120,17 @@ export default function BlogCard({
 
         <h3
           className={`${
-            large ? "text-2xl" : "text-xl"
-          } font-semibold mt-3 leading-snug ${syne.className} `}
+            large ? "lg:text-3xl" : "lg:text-2xl"
+          } lg:font-[500] lg:mt-3 lg:leading-snug ${syne.className} 
+${large ? "text-2xl" : "text-2xl"}
+${large ? "md:text-2xl" : "md:text-2xl"}
+          text-2xl font-[500]
+
+
+
+       
+          
+          `}
         >
           {title}
         </h3>

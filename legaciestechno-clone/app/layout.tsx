@@ -6,6 +6,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Syne } from "next/font/google";
 import Footer from "@/components/Footer";
 import localFont from "next/font/local";
+import PageTransition from "@/components/PageTransition";
 
 const satoshi = localFont({
   src: [
@@ -60,6 +61,7 @@ export default function RootLayout({
           lg:px-12
 
           px-6
+          overflow-x-hidden
 
 
           

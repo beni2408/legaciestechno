@@ -21,12 +21,12 @@ interface TeamCardProps {
 
 export default function TeamCard({ name, role, image }: TeamCardProps) {
   return (
-    <div className="group">
-      <div className="overflow-hidden rounded-2xl">
+    <div className="group mb-10">
+      <div className="overflow-hidden lg:h-58 rounded-2xl">
         <img
           src={image}
           alt={name}
-          className="w-full object-cover transition duration-500 group-hover:scale-105"
+          className="w-full object-cover transition duration-500 group-hover:scale-105 saturate-50"
         />
       </div>
 
@@ -35,7 +35,7 @@ export default function TeamCard({ name, role, image }: TeamCardProps) {
       </h3>
 
       <p
-        className={`${robotoMono.className} text-xs uppercase tracking-widest text-[#191919]/60 mt-2`}
+        className={`${robotoMono.className} text-sm uppercase tracking-widest text-[#191919] mt-2`}
       >
         {role}
       </p>

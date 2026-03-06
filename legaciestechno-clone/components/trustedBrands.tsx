@@ -9,14 +9,14 @@ export default function TrustedBrands() {
   return (
     <section className="bg-[#19191] text-white py-7">
       {/* TOP LINE */}
-      <div className=" lg:mb-3 mb-3" />
+      <div className=" lg:mb-3 mb-1" />
 
       <div className="lg:w-full  ">
-        <div className="lg:flex items-center flex-col flex">
+        <div className="lg:flex-row items-center flex-col flex">
           {/* LABEL */}
-          <div className=" lg:w-[220px]">
+          <div className=" lg:w-[220px] ">
             <p
-              className={` ${robotoMono.className} text-sm tracking-widest text-[#191919] lg:mr-10 lg:border-r lg:h-15 items-center flex justify-start`}
+              className={` ${robotoMono.className} mb-5 text-sm tracking-widest text-[#191919] lg:mr-10 lg:border-r lg:h-15 items-center flex justify-start`}
             >
               TRUSTED BY
             </p>

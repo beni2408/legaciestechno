@@ -31,7 +31,7 @@ export default function Footer() {
       <div className="border-t border-[#191919] mb-16" />
 
       <div className="">
-        <div className="flex justify-between">
+        <div className="flex flex-col lg:flex-row justify-between">
           {/* LEFT */}
           <div className="space-y-6 lg:w-132 ">
             <img src="/logo2.png" alt="Legacies Techno" className="w-62" />
@@ -56,10 +56,11 @@ export default function Footer() {
                 </svg>
               </Link>
             </div>
+            <div className="border-t lg:hidden md:block border-[#191919] mb-6" />
           </div>
 
           {/* CENTER */}
-          <div className=" border-l lg:pl-10   ">
+          <div className=" lg:border-l lg:pl-10   ">
             {/* <div className="hidden lg:block absolute left-[-30px] top-0 h-full w-px bg-[#191919]/20" /> */}
 
             <h3 className={` ${syne.className} text-2xl mb-6`}>Pages</h3>
@@ -101,12 +102,13 @@ export default function Footer() {
               >
                 LYNT-X LABS
               </FooterLink>
+              <div className="border-t lg:hidden md:block border-[#191919] mb-6" />
             </div>
           </div>
 
           {/* RIGHT */}
-          <div className="relative ml-20 ">
-            <div className="flex items-center gap-6">
+          <div className="relative lg:ml-20 ">
+            <div className="flex justify-around items-center gap-6">
               <img
                 src="https://framerusercontent.com/images/4eoLAY655JBYCFjJc9ZlMTkXfg.png"
                 alt="ISO"
@@ -122,9 +124,10 @@ export default function Footer() {
         </div>
 
         {/* BOTTOM */}
-        <div className="border-t border-[#191919] mt-16 pt-6 pb-10">
+        <div className="  border-t border-[#191919] mt-16 pt-6 pb-10">
+          <div className="border-t lg:hidden md:block border-[#191919] mb-6 mt-2" />
           <div
-            className={`flex flex-col md:flex-row justify-between items-center text-sm text-[#191919] lg:text-[15px]  ${robotoMono.className}`}
+            className={`flex flex-col lg:flex-row justify-between md:px-50 px-3  lg:px-0 text-center items-center lg:text-sm text-[#191919] lg:text-[15px]  ${robotoMono.className}`}
           >
             <p>© 2026 LEGACIES TECHNO. ALL RIGHTS RESERVED.</p>
 

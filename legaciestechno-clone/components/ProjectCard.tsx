@@ -43,18 +43,20 @@ export function ProjectCard({ title, status, image, href }: any) {
 export function SmallProjectCard({ title, status, image, href }: any) {
   return (
     <Link href={href} className="group">
-      <div className="">
+      <div className="flex flex-col">
         {/* IMAGE */}
-        <div className="rounded-2xl overflow-hidden border border-white/10 w-[370px] h-[220px] ">
+        <div className="rounded-2xl w-200  overflow-hidden border border-white/10 lg:w-[370px] lg:h-[220px] ">
           <img
             src={image}
-            className="  lg:w-[370px] h-[220px] rounded-2xl object-cover scale-107 group-hover:scale-112 transition duration-500 saturate-30 "
+            className="  lg:w-[370px] lg:h-[220px] w-85 h-50 rounded-2xl object-cover scale-107 group-hover:scale-112 transition duration-500 saturate-30 "
           />
         </div>
 
         {/* TEXT */}
-        <div className="flex justify-between  w-[370px]   items-center mt-4 mb-7 ">
-          <h3 className={` ${syne.className} text-xl font-medium  `}>
+        <div className="flex justify-between  lg:w-[370px]  w-87  items-center mt-4 mb-7 ">
+          <h3
+            className={` ${syne.className} lg:text-xl lg:font-medium text-xl  font-[600] `}
+          >
             {title}
           </h3>
           <span

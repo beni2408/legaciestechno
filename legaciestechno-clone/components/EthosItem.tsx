@@ -24,13 +24,13 @@ export function EthosItem({ number, title, description }: any) {
       {/* TEXT */}
       <div className="space-y-1">
         <h3
-          className={`lg:text-3xl font-[500] tracking-wide ${syne.className}`}
+          className={`lg:text-3xl lg:font-[500] text-3xl font-[500] tracking-wide ${syne.className}`}
         >
           {title}
         </h3>
 
         <p
-          className={`text-[#191919]/80  lg:text-[18px] font-[200] font-satoshi leading-8 `}
+          className={`text-[#191919]/80  lg:text-[18px] font-[200] font-satoshi lg:leading-8 leading-6 lg:w-full w-70 md:w-full `}
         >
           {description}
         </p>

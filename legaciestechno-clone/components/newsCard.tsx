@@ -75,14 +75,14 @@ export function NewsCard({ id, image, category, title }: NewsCardProps) {
 
         {/* CATEGORY */}
         <p
-          className={`${robotoMono.className}  uppercase text-center font-normal text-sm tracking-widest text-[#191919]  mb-1`}
+          className={`${robotoMono.className}  uppercase  text-center font-normal text-sm tracking-widest text-[#191919]  mb-1`}
         >
           {category}
         </p>
 
         {/* TITLE */}
         <h3
-          className={`${syne.className} lg:text-2xl lg:font-[500]  leading-tight group-hover:text-black transition`}
+          className={`${syne.className} lg:text-2xl lg:font-[500] font-[500] text-2xl  leading-tight group-hover:text-black transition`}
         >
           {title}
         </h3>

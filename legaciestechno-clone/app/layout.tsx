@@ -59,7 +59,7 @@ export default function RootLayout({
 
           lg:px-12
 
-          px-5
+          px-10
 
 
           

@@ -1,16 +1,10 @@
 "use client";
 import { useState } from "react";
 import { Syne } from "next/font/google";
-import { Roboto_Mono } from "next/font/google";
 
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
-
-const robotoMono = Roboto_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
 });
 
 interface FAQItemProps {
@@ -22,34 +16,40 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-[#191919]/20 py-6">
+    <div className="border-b border-[#191919]/20 py-6 lg:py-8">
+      {/* QUESTION */}
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center text-left"
+        className="w-full flex justify-between items-start text-left gap-6"
       >
-        <h3 className={` ${syne.className}  text-2xl font-medium`}>
+        <h3
+          className={`${syne.className} text-lg md:text-xl lg:text-2xl font-medium`}
+        >
           {question}
         </h3>
-        <span className="ml-6">
-          {open ? (
-            <div className="w-5 bg-black h-5 flex items-center justify-center border-2 border-[#191919] rounded-full font-mono pb-1">
-              <h1 className="text-white">x</h1>
-            </div>
-          ) : (
-            <div className="w-5 bg-black h-5 flex items-center justify-center border-2 border-[#191919] rounded-full font-bold">
-              <h1 className="text-white">+</h1>
-            </div>
-          )}
-        </span>
+
+        {/* ICON */}
+        <div className="flex-shrink-0 w-7 h-7 flex items-center justify-center rounded-full bg-black text-white text-lg">
+          {open ? "x" : "+"}
+        </div>
       </button>
 
-      {open && (
-        <p
-          className={` ${syne.className} mt-4 text-[#191919] text-xl leading-relaxed`}
-        >
-          {answer}
-        </p>
-      )}
+      {/* ANSWER */}
+      <div
+        className={`grid transition-all duration-500 ease-in-out ${
+          open
+            ? "grid-rows-[1fr] opacity-100 mt-4"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+      >
+        <div className="overflow-hidden">
+          <p
+            className={`${syne.className} text-[#191919] text-base md:text-lg lg:text-xl leading-relaxed`}
+          >
+            {answer}
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

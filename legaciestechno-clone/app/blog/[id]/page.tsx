@@ -53,7 +53,7 @@ export default function SingleBlogPage() {
       <div className="lg:flex lg:flex-row flex-col justify-between lg:w-full border-[#191919] pb-10">
         <div className="">
           <h1
-            className={`lg:text-[78px] text-5xl mt-10 lg:mt-0 font-[500] lg:w-220  lg:font-[500]  lg:leading-20  ${syne.className} `}
+            className={`lg:text-[78px] lg:w-200 text-5xl mt-10 lg:mt-0 font-[500] lg:w-220  lg:font-[500]  lg:leading-20  ${syne.className} `}
           >
             {blog.title}
           </h1>
@@ -176,12 +176,21 @@ export default function SingleBlogPage() {
             RELATED NEWS
           </h2>
 
-          <Link href="/blog">
-            <button
-              className={`${robotoMono.className} lg:block hidden px-6 py-2 border border-[#191919]/30 text-[#191919] uppercase tracking-widest rounded-md hover:bg-[#191919] hover:text-[#fdfbf5] transition`}
-            >
-              See All
-            </button>
+          <Link
+            href="/blog"
+            className={`${syne.className} lg:block hidden group  items-center justify-center px-3.5 py-1 border border-[#191919] rounded-md text-md tracking-widest overflow-hidden`}
+          >
+            <span className="relative h-6 overflow-hidden">
+              {/* Top text */}
+              <span className="block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                SEE ALL
+              </span>
+
+              {/* Bottom text */}
+              <span className="absolute left-0 top-full block transition-transform duration-500 ease-[cubic-bezier(.76,0,.24,1)] group-hover:-translate-y-full">
+                SEE ALL
+              </span>
+            </span>
           </Link>
         </div>
 

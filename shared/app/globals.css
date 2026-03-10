@@ -1,0 +1,206 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@keyframes bracketLeft {
+  0% {
+    transform: translateX(-40px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes bracketRight {
+  0% {
+    transform: translateX(40px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes dot1 {
+  0% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes dot2 {
+  0% {
+    transform: translateY(40px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.animate-dot1 {
+  animation: dot1 2s ease-in-out infinite;
+}
+.animate-dot2 {
+  animation: dot2 2s ease-in-out infinite;
+}
+
+.animate-bracket-left {
+  animation: bracketLeft 2s ease-in-out infinite;
+}
+
+.animate-bracket-right {
+  animation: bracketRight 2s ease-in-out infinite;
+}
+
+body {
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.logo-wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  will-change: transform;
+}
+
+.logo-img {
+  height: 63px;
+  flex-shrink: 0;
+  opacity: 1;
+  filter: saturate(0);
+  transition: opacity 0.3s ease;
+}
+
+.logo-img:hover {
+  opacity: 1;
+}
+.view-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 90px;
+  height: 90px;
+  border-radius: 999px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  font-weight: 600;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("/fonts/Satoshi-Variable.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-satoshi: "Satoshi", sans-serif;
+}
+
+/* CKEditor Content Styles */
+.ck-editor__editable {
+  min-height: 300px;
+  max-height: 500px;
+}
+
+/* Blog content styling */
+.max-w-4xl h1,
+.max-w-4xl h2,
+.max-w-4xl h3 {
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.max-w-4xl h1 {
+  font-size: 2rem;
+}
+
+.max-w-4xl h2 {
+  font-size: 1.5rem;
+}
+
+.max-w-4xl h3 {
+  font-size: 1.25rem;
+}
+
+.max-w-4xl p {
+  margin-bottom: 1rem;
+}
+
+.max-w-4xl ul,
+.max-w-4xl ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.max-w-4xl ul {
+  list-style-type: disc;
+}
+
+.max-w-4xl ol {
+  list-style-type: decimal;
+}
+
+.max-w-4xl li {
+  margin-bottom: 0.5rem;
+}
+
+.max-w-4xl blockquote {
+  border-left: 4px solid #191919;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+}
+
+.max-w-4xl a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.max-w-4xl a:hover {
+  color: #1d4ed8;
+}

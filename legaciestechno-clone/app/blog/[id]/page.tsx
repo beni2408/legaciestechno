@@ -167,7 +167,7 @@ export default function SingleBlogPage() {
         </div>
 
         {/* AUTHOR SIDE */}
-        <div className="lg:border-l lg:border-t-0 border-t mt-10 lg:mt-0 border-[#191919] pt-10    text-start ">
+        <div className="lg:border-l lg:border-t-0 border-t mt-10 lg:mt-0 border-[#191919]    text-start ">
           <p
             className={` ${robotoMono.className} lg:ml-10 font-medium text-[#191919]/50 uppercase text-md mb-2`}
           >

@@ -21,10 +21,6 @@ export default function DashboardPage() {
   const [filter, setFilter] = useState("all");
   const router = useRouter();
 
-  // useEffect(() => {
-  //   const stored = localStorage.getItem("blogs");
-  //   if (stored) setBlogs(JSON.parse(stored));
-  // }, []);
   useEffect(() => {
     const loadBlogs = async () => {
       try {
@@ -39,9 +35,17 @@ export default function DashboardPage() {
     loadBlogs();
   }, []);
 
+  // 🔹 SORT BLOGS BY DATE (LATEST FIRST)
+  const sortedBlogs = [...blogs].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+
+  // 🔹 FEATURED BLOGS = LATEST 2
+  const featuredBlogs = sortedBlogs.slice(0, 2);
+
   const stats = {
     total: blogs.length,
-    featured: blogs.filter((b) => b.featured).length,
+    featured: featuredBlogs.length,
     categories: [...new Set(blogs.map((b) => b.category).filter(Boolean))]
       .length,
   };
@@ -52,7 +56,7 @@ export default function DashboardPage() {
     }
 
     if (filter === "featured") {
-      return blogs.filter((b) => b.featured);
+      return featuredBlogs;
     }
 
     if (filter === "month") {
@@ -126,6 +130,7 @@ export default function DashboardPage() {
             >
               All
             </button>
+
             <button
               onClick={() => setFilter("recent")}
               className={`px-4 py-2 text-sm rounded-lg border ${
@@ -197,7 +202,7 @@ export default function DashboardPage() {
                     </div>
                   </div>
 
-                  {blog.featured && (
+                  {featuredBlogs.some((b) => b.id === blog.id) && (
                     <span className="px-3 py-1 bg-yellow-100 text-yellow-700 text-xs font-semibold rounded-full">
                       FEATURED
                     </span>

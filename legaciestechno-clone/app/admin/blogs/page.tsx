@@ -7,22 +7,51 @@ export default function ManageBlogsPage() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const router = useRouter();
 
+  // useEffect(() => {
+  //   const stored = localStorage.getItem("blogs");
+  //   if (stored) setBlogs(JSON.parse(stored));
+  // }, []);
+
   useEffect(() => {
-    const stored = localStorage.getItem("blogs");
-    if (stored) setBlogs(JSON.parse(stored));
+    const loadBlogs = async () => {
+      try {
+        const res = await fetch("/api/blogs", { cache: "no-store" });
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error loading blogs:", error);
+      }
+    };
+
+    loadBlogs();
   }, []);
 
-  const deleteBlog = (id: string) => {
-    const updated = blogs.filter((b) => b.id !== id);
-    const sortedBlogs = [...updated].sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
-    const blogsWithFeatured = sortedBlogs.map((blog, index) => ({
-      ...blog,
-      featured: index < 2,
-    }));
-    setBlogs(blogsWithFeatured);
-    localStorage.setItem("blogs", JSON.stringify(blogsWithFeatured));
+  // const deleteBlog = (id: string) => {
+  //   const updated = blogs.filter((b) => b.id !== id);
+  //   const sortedBlogs = [...updated].sort(
+  //     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  //   );
+  //   const blogsWithFeatured = sortedBlogs.map((blog, index) => ({
+  //     ...blog,
+  //     featured: index < 2,
+  //   }));
+  //   setBlogs(blogsWithFeatured);
+  //   // localStorage.setItem("blogs", JSON.stringify(blogsWithFeatured));
+  //   setBlogs(blogsWithFeatured);
+  // };
+
+  const deleteBlog = async (id: string) => {
+    await fetch("/api/blogs", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    });
+
+    const res = await fetch("/api/blogs", { cache: "no-store" });
+    const data = await res.json();
+    setBlogs(data);
   };
 
   return (

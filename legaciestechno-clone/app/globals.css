@@ -204,3 +204,15 @@ body {
 .max-w-4xl a:hover {
   color: #1d4ed8;
 }
+
+.ck-editor__editable {
+  min-height: 750px;
+}
+
+.ck-editor__editable_inline {
+  min-height: 750px;
+}
+
+.ck-editor__editable_inline {
+  min-height: 300px;
+}

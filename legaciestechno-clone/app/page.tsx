@@ -41,19 +41,22 @@ export default function HomePage() {
   const [latestBlogs, setLatestBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("blogs");
+    const loadBlogs = async () => {
+      try {
+        const res = await fetch("/data/blogs.json");
+        const blogs: Blog[] = await res.json();
 
-    if (stored) {
-      const parsedBlogs: Blog[] = JSON.parse(stored);
+        const sortedBlogs = blogs.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
 
-      // Sort by newest date
-      const sortedBlogs = parsedBlogs.sort(
-        (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-      );
+        setLatestBlogs(sortedBlogs.slice(0, 3));
+      } catch (error) {
+        console.error("Error loading blogs:", error);
+      }
+    };
 
-      // Take latest 3
-      setLatestBlogs(sortedBlogs.slice(0, 3));
-    }
+    loadBlogs();
   }, []);
 
   return (

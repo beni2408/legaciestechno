@@ -21,9 +21,22 @@ export default function DashboardPage() {
   const [filter, setFilter] = useState("all");
   const router = useRouter();
 
+  // useEffect(() => {
+  //   const stored = localStorage.getItem("blogs");
+  //   if (stored) setBlogs(JSON.parse(stored));
+  // }, []);
   useEffect(() => {
-    const stored = localStorage.getItem("blogs");
-    if (stored) setBlogs(JSON.parse(stored));
+    const loadBlogs = async () => {
+      try {
+        const res = await fetch("/data/blogs.json");
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error loading blogs:", error);
+      }
+    };
+
+    loadBlogs();
   }, []);
 
   const stats = {

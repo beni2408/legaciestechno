@@ -27,14 +27,24 @@ export default function SingleBlogPage() {
   const [allBlogs, setAllBlogs] = useState<Blog[]>([]);
 
   useEffect(() => {
-    const stored = localStorage.getItem("blogs");
-    if (stored) {
-      const blogs: Blog[] = JSON.parse(stored);
-      setAllBlogs(blogs);
+    const loadBlog = async () => {
+      try {
+        const res = await fetch("/api/blogs", { cache: "no-store" });
+        const blogs: Blog[] = await res.json();
 
-      const found = blogs.find((b) => b.id === id);
-      if (found) setBlog(found);
-    }
+        setAllBlogs(blogs);
+
+        const found = blogs.find((b) => String(b.id) === String(id));
+
+        if (found) {
+          setBlog(found);
+        }
+      } catch (error) {
+        console.error("Error loading blog:", error);
+      }
+    };
+
+    loadBlog();
   }, [id]);
 
   if (!blog)
@@ -48,9 +58,9 @@ export default function SingleBlogPage() {
     .slice(0, 3);
 
   return (
-    <section className="bg-[#fdfbf5] text-[#191919] min-h-screen  lg:py-15 ">
+    <section className="bg-[#fdfbf5] text-[#191919] min-h-screen lg:max-w-350    lg:py-15 ">
       {/* TITLE AREA */}
-      <div className="lg:flex lg:flex-row flex-col justify-between lg:w-full border-[#191919] pb-10">
+      <div className="lg:flex  lg:flex-row flex-col justify-between lg:w-full border-[#191919] pb-10">
         <div className="">
           <h1
             className={`lg:text-[78px] lg:w-200 text-5xl mt-10 lg:mt-0 font-[500] lg:w-220  lg:font-[500]  lg:leading-20  ${syne.className} `}
@@ -122,8 +132,11 @@ export default function SingleBlogPage() {
 
       {/* CONTENT */}
       <div className="lg:mt-16 mt-10 lg:flex lg:flex-row flex-col text-sm justify-start">
-        <div className="lg:w-260 lg:pr-10 text-md lg:text-lg font-medium text-[#191919] leading-relaxed ">
-          <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+        <div className="lg:w-260 lg:pr-10 text-md font-[400] lg:text-lg  text-[#191919] leading-relaxed ">
+          <div
+            className={`${syne.className} [&_ul]:list-disc [&_ol]:list-decimal [&_ul]:pl-6 [&_ol]:pl-6`}
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
           {blog.source && (
             <div className=" ">
               <p

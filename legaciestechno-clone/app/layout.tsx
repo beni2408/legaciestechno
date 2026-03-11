@@ -62,7 +62,7 @@ export default function RootLayout({
 
           px-6
           overflow-x-hidden
-
+     
 
           
          

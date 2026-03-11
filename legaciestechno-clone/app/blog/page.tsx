@@ -178,10 +178,17 @@ export default function BlogPage() {
   const [visibleCount, setVisibleCount] = useState(3);
 
   useEffect(() => {
-    const stored = localStorage.getItem("blogs");
-    if (stored) {
-      setBlogs(JSON.parse(stored));
-    }
+    const loadBlogs = async () => {
+      try {
+        const res = await fetch("/api/blogs", { cache: "no-store" });
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error loading blogs:", error);
+      }
+    };
+
+    loadBlogs();
   }, []);
 
   const featuredBlogs = blogs.filter((b) => b.featured);
